@@ -34,6 +34,7 @@ function SignUp() {
 
     
   return (
+        <div className='container'>
             <div className='form'>
                     {error}
                     <form onSubmit={handleSubmit}>
@@ -51,6 +52,7 @@ function SignUp() {
                         Already Have An Account <Link to="/login">LogIn</Link>
                     </div>
             </div>
+        </div>
   )
 }
 
