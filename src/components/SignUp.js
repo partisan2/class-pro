@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
-// import './SignUp.css'
+import './SignUp.css'
+import Header from './Header'
 
 function SignUp() {
     const emailRef = useRef()
@@ -21,7 +22,7 @@ function SignUp() {
         try{
             setError("")
             setLoading(true)
-            console.log(emailRef.current.value,passwordRef.current.value)
+            // console.log(emailRef.current.value,passwordRef.current.value)
             await signup(emailRef.current.value,passwordRef.current.value)
             navigate('/login')
         }catch{
@@ -34,23 +35,29 @@ function SignUp() {
 
     
   return (
-            <div className='form'>
-                    {error}
+        <div className='container'>
+            <Header/>
+            <div className='error'>
+                {error && <span>{error}</span>}
+            </div>
+            <div className='form-signup'>
                     <form onSubmit={handleSubmit}>
                         <h1 className='signup_h'>SignUp</h1>
+                        <br/>
                         <input type='email' placeholder='Email' ref={emailRef} required />
                         <input type='password' placeholder='Password'ref={passwordRef} required />
                         <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
                         <br/>
-                        
-                        <button dissabled = {loading}>SignUp</button>
-                        {/* <span dissabled = {loading}>SignUp</span> */}
+                        <button dissabled = {loading}>Sign Up</button>
                         <br/>
                     </form>
-                    <div>
-                        Already Have An Account <Link to="/login">LogIn</Link>
+                    <div className='to_login'>
+                        Already Have An Account?
+                        <br/>
+                        <Link to="/login">LogIn</Link>
                     </div>
             </div>
+        </div>
   )
 }
 
