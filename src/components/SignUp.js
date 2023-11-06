@@ -35,7 +35,7 @@ function SignUp() {
     
   return (
         <div className='container'>
-            <div className='form'>
+            <div className='form-signup'>
                     {error}
                     <form onSubmit={handleSubmit}>
                         <h1 className='signup_h'>SignUp</h1>
