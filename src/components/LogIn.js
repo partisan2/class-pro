@@ -9,7 +9,7 @@ function LogIn() {
     const passwordRef = useRef()
     const { login } = useAuth()
     const [error,setError] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState("false")
     const navigate = useNavigate();
 
 
@@ -18,15 +18,15 @@ function LogIn() {
         
         try{
             setError("")
-            setLoading(true)
+            setLoading("true")
             await login(emailRef.current.value,passwordRef.current.value)
-            console.log(emailRef.current.value,passwordRef.current.value)
+            // console.log(emailRef.current.value,passwordRef.current.value)
             navigate('/')
         }catch{
             console.log(error)
             setError('Failed to Loging to account');
         }
-        setLoading(false)
+        setLoading("false")
 
     }
 

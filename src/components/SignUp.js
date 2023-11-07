@@ -10,7 +10,7 @@ function SignUp() {
     const confirmPasswordRef = useRef()
     const { signup } = useAuth()
     const [error,setError] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState("false")
     const navigate = useNavigate();
 
     async function handleSubmit(e){
@@ -21,7 +21,7 @@ function SignUp() {
         
         try{
             setError("")
-            setLoading(true)
+            setLoading("true")
             // console.log(emailRef.current.value,passwordRef.current.value)
             await signup(emailRef.current.value,passwordRef.current.value)
             navigate('/login')
@@ -29,7 +29,7 @@ function SignUp() {
             console.log(error)
             setError('Failed to Create an account');
         }
-        setLoading(false)
+        setLoading("false")
 
     }
 

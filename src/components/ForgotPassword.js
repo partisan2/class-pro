@@ -9,7 +9,7 @@ function ForgotPassword() {
     const { resetPassword } = useAuth()
     const [error,setError] = useState()
     const [message,setMessage] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState("false")
 
 
     async function handleSubmit(e){
@@ -18,7 +18,7 @@ function ForgotPassword() {
         try{
             setError("")
             setMessage("")
-            setLoading(true)
+            setLoading("true")
             await resetPassword(emailRef.current.value)
             setMessage('Check Your Email')
             // console.log(emailRef.current.value,passwordRef.current.value)
@@ -27,7 +27,7 @@ function ForgotPassword() {
             console.log(error)
             setError('Failed to reset password');
         }
-        setLoading(false)
+        setLoading("false")
 
     }
 
