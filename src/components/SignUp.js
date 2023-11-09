@@ -3,6 +3,8 @@ import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './SignUp.css'
 import Header from './Header'
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from '../firebase';
 
 function SignUp() {
     const emailRef = useRef()
@@ -10,7 +12,7 @@ function SignUp() {
     const confirmPasswordRef = useRef()
     const { signup } = useAuth()
     const [error,setError] = useState()
-    const [loading,setLoading] = useState("false")
+    const [loading,setLoading] = useState(false)
     const navigate = useNavigate();
 
     async function handleSubmit(e){
@@ -21,17 +23,26 @@ function SignUp() {
         
         try{
             setError("")
-            setLoading("true")
+            setLoading(true)
             // console.log(emailRef.current.value,passwordRef.current.value)
-            await signup(emailRef.current.value,passwordRef.current.value)
-            navigate('/login')
+            const res = await signup(emailRef.current.value,passwordRef.current.value)
+            try{
+                await setDoc(doc(db, "Users", res.user.uid), {
+                    email:emailRef.current.value,
+                    password:passwordRef.current.value,
+                    timeStamp: serverTimestamp()
+                });
+                navigate('/login')
+            }catch(r){console.log(r)}
         }catch{
             console.log(error)
             setError('Failed to Create an account');
+            setLoading(false)
         }
-        setLoading("false")
 
     }
+
+    
 
     
   return (
