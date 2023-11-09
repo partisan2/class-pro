@@ -30,6 +30,7 @@ function SignUp() {
                 await setDoc(doc(db, "Users", res.user.uid), {
                     email:emailRef.current.value,
                     password:passwordRef.current.value,
+                    userName:emailRef.current.value,
                     timeStamp: serverTimestamp()
                 });
                 navigate('/login')
