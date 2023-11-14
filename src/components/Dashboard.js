@@ -10,6 +10,8 @@ function Dashboard() {
       DashBoard
       <LogOut/>
       UpdateProfile<Link to='/update-profile'>Update</Link>
+      <br/>
+      update password<Link to='/update-password'>update password</Link>
     </div>
   )
 }

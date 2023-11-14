@@ -1,57 +1,98 @@
-import React,{ useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
-import { useNavigate, Link } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Header from './Header'
+import { storage,db } from '../firebase';
+import { doc, updateDoc } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useAuth } from '../contexts/AuthContext';
+
 
 function UpdateProfile() {
-    const passwordRef = useRef()
-    const confirmPasswordRef = useRef()
-    const {  updatePassword } = useAuth()
-    const [error,setError] = useState()
-    const [loading,setLoading] = useState(false)
-    const navigate = useNavigate();
+    const nameRef = useRef()
+    const [file,setFile] = useState("")
+    const [ image, setImage] = useState("")
+    const [ error,setError ] = useState()
+    const [ loading, setLoading ] =useState(null)
+    const { currentUser } = useAuth()
+    
+    useEffect(()=>{
+        const uploadFile = () =>{
+            const name = new Date().getTime()+file.name
+            console.log(name)
+            const storageRef = ref(storage, file.name);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+            uploadTask.on('state_changed', 
+                (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                setLoading(progress)
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                    default:
+                        break;
+                    }
+                },(error) => {
+                    // Handle unsuccessful uploads
+                  }, 
+                  () => {
+                    // Handle successful uploads on complete
+                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                      console.log('File available at', downloadURL);
+                      setImage(downloadURL);
+                    });
+                  }
+                ); 
+        }
+        file && uploadFile()
+    },[file])
 
-    function handleSubmit(e){
-        setError("")
-        setLoading(true)
+    async function handleUpdate(e){
         e.preventDefault()
-        if(passwordRef.current.value !== confirmPasswordRef.current.value){
-            return setError('Password do not match')
+
+        console.log(currentUser.email)
+        try{
+            setError("")
+            await updateDoc(doc(db,"Users",currentUser.uid), {
+                userName:nameRef.current.value,
+                profilePic:image
+              });
+        }catch(r){
+            console.log(r)
+            console.log(error)
         }
-
-        const promises = []
-
-        if(passwordRef.current.value){
-            promises.push(updatePassword(passwordRef.current.value))
-        }
-
-        Promise.all(promises).then(() =>{
-            navigate("/login")
-        }).catch(() =>{
-            setError("Failed to Update")
-        }).finally(() =>{
-            setLoading(false)
-        })
-        
 
     }
+
   return (
-    <div className='form'>
-                    {error}
-                    <form onSubmit={handleSubmit}>
-                        <h1 className='signup_h'>Update Password</h1>
-                        <input type='password' placeholder='Password'ref={passwordRef} required />
-                        <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
+    <div className='container'> 
+            {/* <Header/> */}
+            <div className='error'>
+                {error && <span>{error}</span>}
+            </div>
+            <div className='form-signup'>
+                    <form onSubmit={handleUpdate}>
+                        <h1 className='signup_h'>Update Profile</h1>
                         <br/>
-                        
-                        <button dissabled = {loading}>Update Password</button>
-                        {/* <span dissabled = {loading}>SignUp</span> */}
+                        <label className='name'>Name</label>
+                        <input type='text' placeholder='Name' ref={nameRef} />
+                        <lable className='profile_pic'>Profile Picture</lable>
+                        <input type='file'id='file' onChange={(e) => setFile(e.target.files[0])}/>
+                        <br/>
+                        <button dissabled={loading !==null && loading<100 }>Update</button>
                         <br/>
                     </form>
-                    <div>
-                        <Link to="/">Cancel</Link>
-                    </div>
             </div>
+        </div>
   )
 }
 
 export default UpdateProfile
+

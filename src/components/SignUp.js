@@ -31,6 +31,8 @@ function SignUp() {
                     email:emailRef.current.value,
                     password:passwordRef.current.value,
                     userName:emailRef.current.value,
+                    userType:"",
+                    profilePic:"",
                     timeStamp: serverTimestamp()
                 });
                 navigate('/login')
