@@ -7,6 +7,11 @@ import PrivateRout from "./components/PrivateRout";
 import ForgotPassword from "./components/ForgotPassword";
 import UpdatePsswrd from "./components/UpdatePsswrd";
 import UpdateProfile from "./components/UpdateProfile";
+import Subject from "./components/Subject";
+import Events from "./components/Events";
+import Messenger from "./components/Messenger";
+import Profile from "./components/Profile";
+
 
 function App() {
   return (
@@ -16,6 +21,10 @@ function App() {
             <Route exact path="/" element={<PrivateRout><Dashboard/></PrivateRout>}/>
             <Route path="/update-password" element={<PrivateRout><UpdatePsswrd/></PrivateRout>}/>
             <Route path="/update-profile" element={<PrivateRout><UpdateProfile/></PrivateRout>}/>
+            <Route path="/subject" element={<PrivateRout><Subject/></PrivateRout>}/>
+            <Route path="/events" element={<PrivateRout><Events/></PrivateRout>}/>
+            <Route path="/messenger" element={<PrivateRout><Messenger/></PrivateRout>}/>
+            <Route path="/profile" element={<PrivateRout><Profile/></PrivateRout>}/>
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>

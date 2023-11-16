@@ -29,11 +29,13 @@ function SignUp() {
             try{
                 await setDoc(doc(db, "Users", res.user.uid), {
                     email:emailRef.current.value,
-                    password:passwordRef.current.value,
                     userName:emailRef.current.value,
                     userType:"",
                     profilePic:"",
                     timeStamp: serverTimestamp()
+                });
+
+                await setDoc(doc(db, "UsersChats", res.user.uid), {
                 });
                 navigate('/login')
             }catch(r){console.log(r)}
@@ -47,7 +49,6 @@ function SignUp() {
 
     
 
-    
   return (
         <div className='container'>
             <Header/>

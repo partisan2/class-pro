@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import Header from './Header'
 import { storage,db } from '../firebase';
 import { doc, updateDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useAuth } from '../contexts/AuthContext';
+import HeaderDashboard from './HeaderDashboard';
+import FooterDashboard from './FooterDashboard';
 
 
 function UpdateProfile() {
@@ -45,7 +45,7 @@ function UpdateProfile() {
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                      console.log('File available at', downloadURL);
+                    //   console.log('File available at', downloadURL);
                       setImage(downloadURL);
                     });
                   }
@@ -72,7 +72,9 @@ function UpdateProfile() {
     }
 
   return (
-    <div className='container'> 
+      <div>
+        <HeaderDashboard/>
+        <div className='container'> 
             {/* <Header/> */}
             <div className='error'>
                 {error && <span>{error}</span>}
@@ -90,6 +92,8 @@ function UpdateProfile() {
                         <br/>
                     </form>
             </div>
+        </div>
+        <FooterDashboard/>
         </div>
   )
 }

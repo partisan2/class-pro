@@ -1,6 +1,8 @@
 import React,{ useRef,useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { useNavigate, Link } from 'react-router-dom'
+import HeaderDashboard from './HeaderDashboard'
+import FooterDashboard from './FooterDashboard'
 
 
 function UpdatePsswrd() {
@@ -36,7 +38,9 @@ function UpdatePsswrd() {
 
     }
   return (
-    <div className='form'>
+    <div>
+        <HeaderDashboard/>
+        <div className='form'>
         {error && <span>{error}</span>}
         <form onSubmit={handleSubmit}>
             <h1 className='signup_h'>Update Password</h1>
@@ -49,6 +53,8 @@ function UpdatePsswrd() {
             <div>
                 <Link to="/">Cancel</Link>
             </div>
+        </div>
+        <FooterDashboard/>
     </div>
   )
 }
