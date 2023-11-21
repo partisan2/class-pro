@@ -11,6 +11,8 @@ import Subject from "./components/Subject";
 import Events from "./components/Events";
 import Messenger from "./components/Messenger";
 import Profile from "./components/Profile";
+import AddEvents from "./components/AddEvents";
+
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
             <Route path="/events" element={<PrivateRout><Events/></PrivateRout>}/>
             <Route path="/messenger" element={<PrivateRout><Messenger/></PrivateRout>}/>
             <Route path="/profile" element={<PrivateRout><Profile/></PrivateRout>}/>
+            <Route path="/add-events" element={<PrivateRout><AddEvents/></PrivateRout>}/>
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>

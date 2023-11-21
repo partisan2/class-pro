@@ -20,7 +20,7 @@ function HeaderDashboard() {
               // console.log("Document data:", docSnap.data().email);
               setDocumentData(docSnap.data().userName)
               setPic(docSnap.data().profilePic)
-              console.log(docSnap.data().profilePic)
+              // console.log(docSnap.data().profilePic)
             } else {
               // docSnap.data() will be undefined in this case
               console.log("No such document!");
@@ -32,12 +32,12 @@ function HeaderDashboard() {
 
   return (
     <div>
-       <nav class="navbar">
-            <div class="logo"><Link to="/">ClassPro</Link></div>
-            <ul class="nav-links">
+       <nav className="navbar">
+            <div className="logo"><Link to="/">ClassPro</Link></div>
+            <ul className="nav-links">
                 <input type="checkbox" id="checkbox_toggle"/>
-                <label for="checkbox_toggle" class="three-line">&#9776;</label>
-            <div class="menu">
+                <label htmlFor="checkbox_toggle" class="three-line">&#9776;</label>
+            <div className="menu">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to='/subject'>Subject</Link></li>
                 <li><Link to='/events'>Events</Link></li>
