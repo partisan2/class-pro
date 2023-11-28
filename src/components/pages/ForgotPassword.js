@@ -1,8 +1,8 @@
 import React,{ useState,useRef} from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import './ForgotPassword.css'
-import Header from './Header'
+import Header from '../Header'
 
 function ForgotPassword() {
     const emailRef = useRef()

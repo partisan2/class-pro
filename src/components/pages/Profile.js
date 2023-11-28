@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderDashboard from './HeaderDashboard'
-import FooterDashboard from './FooterDashboard'
+import HeaderDashboard from '../HeaderDashboard'
+import FooterDashboard from '../FooterDashboard'
 import LogOut from './LogOut'
 import { Link } from 'react-router-dom'
 

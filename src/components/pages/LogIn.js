@@ -1,8 +1,8 @@
 import React,{ useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link,useNavigate } from 'react-router-dom'
 import './LogIn.css'
-import Header from './Header'
+import Header from '../Header'
 
 function LogIn() {
     const emailRef = useRef()

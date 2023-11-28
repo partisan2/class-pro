@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
-import HeaderDashboard from './HeaderDashboard'
+import HeaderDashboard from '../HeaderDashboard'
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from '../firebase';
-import { useAuth } from '../contexts/AuthContext';
+import { db } from '../../firebase';
+import { useAuth } from '../../contexts/AuthContext';
 
 
 function AddEvents() {

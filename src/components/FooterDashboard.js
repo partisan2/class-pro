@@ -1,5 +1,6 @@
 import React from 'react'
 import './FooterDashboard.css'
+import { Link } from 'react-router-dom'
 
 function FooterDashboard() {
   return (
@@ -10,17 +11,18 @@ function FooterDashboard() {
             ClassPro is a platform that helps students to learn and improve their skills.
         </p>
         <ul className="socials">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          <br/>
+            <li><Link to="#"><i class="fa fa-facebook"></i></Link></li>
+            <li><Link to="#"><i class="fa fa-twitter"></i></Link></li>
+            <li><Link to="#"><i class="fa fa-google-plus"></i></Link></li>
+            <li><Link to="#"><i class="fa fa-youtube"></i></Link></li>
+            <li><Link to="#"><i class="fa fa-linkedin-square"></i></Link></li>
         </ul>
         <ul className="footer-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="#">About</Link></li>
+            <li><Link to="#">Contact</Link></li>
+            <li><Link to="#">Blog</Link></li>
          </ul>
         </div>
   </footer>

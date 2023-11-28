@@ -27,8 +27,9 @@ footer {
     justify-content: center;
     margin-bottom: 30px;
   }
-
+  
   .socials li {
+    padding: 10px;
     margin: 0 10px;
   }
 
@@ -60,7 +61,7 @@ footer {
     margin: 20px 0;
   }
 
-  .footer-menu ul {
+  .footer-menu {
     display: flex;
     justify-content: center;
     align-items: center; /* Align items vertically in the middle */
@@ -69,11 +70,11 @@ footer {
     list-style: none;
   }
 
-  .footer-menu ul li {
-    margin: 0 15px; /* Add space between menu items */
+  .footer-menu li {
+    margin: 0 15px; 
   }
 
-  .footer-menu ul li a {
+  .footer-menu li a {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;

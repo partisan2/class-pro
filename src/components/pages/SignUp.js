@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './SignUp.css'
-import Header from './Header'
+import Header from '../Header'
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from '../firebase';
+import { db } from '../../firebase';
 
 function SignUp() {
     const emailRef = useRef()

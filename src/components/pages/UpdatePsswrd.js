@@ -1,8 +1,8 @@
 import React,{ useRef,useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate, Link } from 'react-router-dom'
-import HeaderDashboard from './HeaderDashboard'
-import FooterDashboard from './FooterDashboard'
+import HeaderDashboard from '../HeaderDashboard'
+import FooterDashboard from '../FooterDashboard'
 
 
 function UpdatePsswrd() {
