@@ -11,6 +11,8 @@ import Events from "./components/pages/Events";
 import Messenger from "./components/Messenger";
 import Profile from "./components/pages/Profile";
 import AddEvents from "./components/pages/AddEvents";
+import Assignment from "./components/pages/Assignment";
+import AddAssignment from "./components/pages/AddAssignment";
 
 
 
@@ -27,6 +29,8 @@ function App() {
             <Route path="/messenger" element={<PrivateRout><Messenger/></PrivateRout>}/>
             <Route path="/profile" element={<PrivateRout><Profile/></PrivateRout>}/>
             <Route path="/add-events" element={<PrivateRout><AddEvents/></PrivateRout>}/>
+            <Route path="/assignments" element={<PrivateRout><Assignment/></PrivateRout>}/>
+            <Route path="/add-assignment" element={<PrivateRout><AddAssignment/></PrivateRout>}/>
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>

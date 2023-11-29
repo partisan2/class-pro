@@ -3,6 +3,8 @@ import HeaderDashboard from '../HeaderDashboard'
 import FooterDashboard from '../FooterDashboard'
 import { db } from '../../firebase'
 import { getDocs,collection,query,orderBy, where } from "firebase/firestore";
+import "../Style.css"
+import { Link } from 'react-router-dom';
 
 
 function Dashboard() {
@@ -45,12 +47,20 @@ function Dashboard() {
       <HeaderDashboard/>
       <div className='dashboard-container'>
         <div className='upcming-act'>
-
+          <span>Assignments</span>
         </div>
         {/* upcoming event */}
         <div className='upcming-event'>
+          <span className='upcming-event-name'>Upcoming Events</span>
           {upcomingEvent}
+          <span><Link to='/events'>Events</Link></span>
         </div>
+      </div>
+      <div className='dashboard-notice'>
+        <span>Notice</span>
+      </div>
+      <div className='banner'>
+        banner
       </div>
       <FooterDashboard/>
     </div>

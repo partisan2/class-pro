@@ -31,7 +31,7 @@ function HeaderDashboard() {
             <div className="logo"><Link to="/">ClassPro</Link></div>
             <ul className="nav-links">
             <div className="menu">
-                <li><Link to='/assignment'>Assignment</Link></li>
+                <li><Link to='/assignments'>Assignment</Link></li>
                 <li><Link to='/events'>Events</Link></li>
                 <li><Link to='/messenger'>Message</Link></li>
                 <li><Link to='/about'>About</Link></li>

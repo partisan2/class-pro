@@ -12,7 +12,8 @@ function Events() {
   const [ documents,setDocuments ] = useState([])
   const {currentUser} = useAuth();
   const [ userType, setUserType ] =useState()
-
+  
+  //fetch data from db
   useEffect(()=>{
     const fetchData = async () =>{
       let list = []
@@ -31,6 +32,7 @@ function Events() {
     fetchData()
   },[])
 
+  // get usertype
   useEffect(()=>{
     const fetchData = async () =>{
       try{
