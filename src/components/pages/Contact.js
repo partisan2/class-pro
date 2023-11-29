@@ -1,6 +1,35 @@
-import React from 'react'
+import React , { useState } from 'react';
 import HeaderDashboard from '../HeaderDashboard'
 import FooterDashboard from '../FooterDashboard'
+
+
+
+const containerStyle = {
+    maxWidth: '800px',
+    margin: 'auto',
+    padding: '20px',
+  };
+  
+  const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+  };
+  
+  const labelStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+  };
+  
+  const buttonStyle = {
+    backgroundColor: '#4CAF50',
+    color: 'white',
+    padding: '10px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  };
+
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -30,14 +59,10 @@ function Contact() {
   
   
   
-  
-  
-  
-  
     return (
     <div>
         <HeaderDashboard/>
-        <div>
+        <div style={containerStyle}>
         <h2>Contact Us</h2>
         <p>Feel free to reach out to us. We'd love to hear from you!</p>
 
@@ -51,8 +76,8 @@ function Contact() {
         {/* Contact Form */}
         <div>
           <h3>Contact Form</h3>
-          <form onSubmit={handleSubmit}>
-            <label>
+          <form  style={formStyle} onSubmit={handleSubmit}>
+            <label style={labelStyle}>
               Full Name:
               <input
                 type="text"
@@ -63,7 +88,7 @@ function Contact() {
               />
             </label>
 
-            <label>
+            <label style={labelStyle}>
               Email Address:
               <input
                 type="email"
@@ -74,7 +99,7 @@ function Contact() {
               />
             </label>
 
-            <label>
+            <label style={labelStyle}>
               Phone Number:
               <input
                 type="tel"
@@ -85,7 +110,7 @@ function Contact() {
               />
             </label>
 
-            <label>
+            <label style={labelStyle}>
               Message:
               <textarea
                 name="message"
@@ -95,7 +120,7 @@ function Contact() {
               />
             </label>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" style={buttonStyle}> Send Message</button>
           </form>
         </div>
       </div>
