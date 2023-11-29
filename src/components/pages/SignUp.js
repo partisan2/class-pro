@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './SignUp.css'
-import Header from './Header'
+import Header from '../Header'
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from '../../firebase';
 
 function SignUp() {
     const emailRef = useRef()
@@ -23,17 +25,30 @@ function SignUp() {
             setError("")
             setLoading(true)
             // console.log(emailRef.current.value,passwordRef.current.value)
-            await signup(emailRef.current.value,passwordRef.current.value)
-            navigate('/login')
+            const res = await signup(emailRef.current.value,passwordRef.current.value)
+            try{
+                await setDoc(doc(db, "Users", res.user.uid), {
+                    email:emailRef.current.value,
+                    userName:emailRef.current.value,
+                    userType:"",
+                    profilePic:"",
+                    timeStamp: serverTimestamp()
+                });
+
+                await setDoc(doc(db, "UsersChats", res.user.uid), {
+                });
+                navigate('/login')
+            }catch(r){console.log(r)}
         }catch{
             console.log(error)
             setError('Failed to Create an account');
+            setLoading(false)
         }
-        setLoading(false)
 
     }
 
     
+
   return (
         <div className='container'>
             <Header/>

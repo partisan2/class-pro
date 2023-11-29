@@ -1,0 +1,82 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.header-dashboard{
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+.navbar-dashboard{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(45deg, #d83f87,#44318d);
+  text-align: left;
+  justify-content: space-between;
+}
+
+
+.logo{
+  font-style: cursive;
+  font-size: 36px;
+  padding: 10px;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 15px;
+}
+
+.menu li a{
+  color: #fff;
+  font-size: 20px;
+}
+
+.menu li{
+  padding: 10px 20px;
+}
+
+.menu li:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+#pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.dashboard-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.upcming-event{
+  text-transform: capitalize;
+  padding: 10px;
+  border: 1px solid #44318d ;
+}
+
+.upcming-event td{
+  padding: 5px;
+}
+
+.upcming-event-name{
+  font-size: 18px;
+  font-weight: bold;
+}

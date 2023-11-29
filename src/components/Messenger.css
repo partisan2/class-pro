@@ -1,0 +1,175 @@
+.messenger{
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerm{
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    width:90% ;
+    height: 95%;
+    overflow: hidden;
+}
+
+.sidebar{
+    flex: 1;
+    border-right: 1px solid #000;
+    background-color: azure;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: beige;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    color: #000;
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+img{
+    background-color: aqua;
+    height: 50px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search{
+    border-bottom: 1px solid gray;
+}
+
+.search-form{
+    padding: 10px;
+}
+
+.search-form input{
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
+
+.search-form input::placeholder{
+    color: gray;
+}
+
+.userchat{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+}
+
+.userchat:hover{
+    background-color: antiquewhite;
+}
+
+.userchat img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.uchatInfo span{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.uchatInfo p{
+    font-size: 14px;
+    color: darkblue;
+    margin: 0;
+}
+
+.chat{
+    flex: 2;
+}
+
+.chat .chatInfo{
+    height: 50px;
+    background-color: bisque;
+    padding: 10px;
+}
+
+.messages{
+    background-color: aquamarine;
+    padding: 10px;
+    height: 73%;
+    overflow-y: scroll;
+}
+
+.message{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+
+}
+
+.message.owner{
+    flex-direction: row-reverse;
+}
+
+.message.message.owner p{
+    background-color: chartreuse;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+}
+
+.message .messageInfo{
+    display: flex;
+    flex-direction: column;
+    color: grey;
+}
+
+.message .messageInfo img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.message .messageContent{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message .messageContent p{
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius:  0 20px 20px 20px ;
+}
+
+
+
+.input{
+    height: 50px;
+    background-color: antiquewhite;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input input{
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.send{
+    gap: 5px;
+}

@@ -1,15 +1,15 @@
 import React,{ useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link,useNavigate } from 'react-router-dom'
 import './LogIn.css'
-import Header from './Header'
+import Header from '../Header'
 
 function LogIn() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const { login } = useAuth()
     const [error,setError] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState("false")
     const navigate = useNavigate();
 
 
@@ -18,15 +18,15 @@ function LogIn() {
         
         try{
             setError("")
-            setLoading(true)
+            setLoading("true")
             await login(emailRef.current.value,passwordRef.current.value)
-            console.log(emailRef.current.value,passwordRef.current.value)
+            // console.log(emailRef.current.value,passwordRef.current.value)
             navigate('/')
         }catch{
             console.log(error)
             setError('Failed to Loging to account');
         }
-        setLoading(false)
+        setLoading("false")
 
     }
 

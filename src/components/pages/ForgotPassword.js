@@ -1,15 +1,15 @@
 import React,{ useState,useRef} from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import './ForgotPassword.css'
-import Header from './Header'
+import Header from '../Header'
 
 function ForgotPassword() {
     const emailRef = useRef()
     const { resetPassword } = useAuth()
     const [error,setError] = useState()
     const [message,setMessage] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState("false")
 
 
     async function handleSubmit(e){
@@ -18,7 +18,7 @@ function ForgotPassword() {
         try{
             setError("")
             setMessage("")
-            setLoading(true)
+            setLoading("true")
             await resetPassword(emailRef.current.value)
             setMessage('Check Your Email')
             // console.log(emailRef.current.value,passwordRef.current.value)
@@ -27,7 +27,7 @@ function ForgotPassword() {
             console.log(error)
             setError('Failed to reset password');
         }
-        setLoading(false)
+        setLoading("false")
 
     }
 
