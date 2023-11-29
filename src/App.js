@@ -33,11 +33,11 @@ function App() {
             <Route path="/add-events" element={<PrivateRout><AddEvents/></PrivateRout>}/>
             <Route path="/assignments" element={<PrivateRout><Assignment/></PrivateRout>}/>
             <Route path="/add-assignment" element={<PrivateRout><AddAssignment/></PrivateRout>}/>
+            <Route path="/aboutus" element={<PrivateRout><AboutUs/></PrivateRout>}/>
+            <Route path="/contact" element={<PrivateRout><Contact/></PrivateRout>}/>
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>
-            <Route path="/aboutus" element={<PrivateRout><AboutUs/></PrivateRout>}/>
-            <Route path="/contact" element={<PrivateRout><Contact/></PrivateRout>}/>
             
 
           </Routes>

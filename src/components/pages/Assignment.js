@@ -47,7 +47,7 @@ function Assignment() {
             list.push({ id : doc.id ,...doc.data()})
           });
           setDocuments(list)
-          console.log(list)
+        //   console.log(list)
     
           }catch(r){console.log(r)}
         }
@@ -110,13 +110,23 @@ function AssignmentLayout({assignmentName,assignmentDue,assignmetDescription,ass
   }
     return(
         <div className='assignment-component'>
-            <h3>{assignmentName}</h3>
+            <table>
+                <tr>
+                    <th>
+                        <h3>{assignmentName}</h3>
+                    </th>
+                    <td>
+                        <p>{assignmentDue}</p>
+                    </td>
+                </tr>
+            </table>
+                <p className='description'>{assignmetDescription}</p>
             <br/>
-            <div>
-                <p>Due Date:{assignmentDue}</p>
-                <p>Description:{assignmetDescription}</p>
-                <span><Link to={assignmentFile} target='blank'>file</Link></span>
-            </div>
+            {assignmentFile !== "" &&
+                <div>
+                    <span><Link to={assignmentFile} target='blank'>{assignmentName}</Link></span>
+                </div>
+            }
             {userType === "teacher" && 
                 <div>
                     <br/>

@@ -80,3 +80,22 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.assignment-component{
+  border: 1px solid #44318d ;
+  padding: 10px;
+  margin: 10px;
+}
+
+.assignment-component h3{
+  text-transform: capitalize;
+}
+
+.description{
+  width: 80%;
+  min-height: 50px;
+  height: auto;
+  border: 1px solid #fff;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
