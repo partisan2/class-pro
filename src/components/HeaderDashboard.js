@@ -34,7 +34,7 @@ function HeaderDashboard() {
                 <li><Link to='/assignments'>Assignment</Link></li>
                 <li><Link to='/events'>Events</Link></li>
                 <li><Link to='/messenger'>Message</Link></li>
-                <li><Link to='/about'>About</Link></li>
+                <li><Link to='/aboutus'>About</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
                 </div>
                 <Link to='/profile'><img id='pic' src={pic} alt=''/></Link>

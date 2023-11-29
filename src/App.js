@@ -13,6 +13,8 @@ import Profile from "./components/pages/Profile";
 import AddEvents from "./components/pages/AddEvents";
 import Assignment from "./components/pages/Assignment";
 import AddAssignment from "./components/pages/AddAssignment";
+import AboutUs from "./components/pages/AboutUs";
+import Contact from "./components/pages/Contact";
 
 
 
@@ -34,6 +36,10 @@ function App() {
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>
+            <Route path="/aboutus" element={<PrivateRout><AboutUs/></PrivateRout>}/>
+            <Route path="/contact" element={<PrivateRout><Contact/></PrivateRout>}/>
+            
+
           </Routes>
         </AuthProvider>
     </Router>
