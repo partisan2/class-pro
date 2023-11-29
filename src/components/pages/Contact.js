@@ -42,20 +42,53 @@ const Contact = () => {
   };
 
   const contactInfoStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    /*backgroundColor: 'rgba(255, 255, 255, 0.7)',*/
     padding: '20px',
     borderRadius: '10px',
   };
 
   const getInTouchStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     padding: '20px',
     borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'column',
     textAlign: 'center',
+    alignItems: 'center', // Center the form vertically
+    width: '100%', // Set the width to 100% to ensure responsiveness
   };
 
   const formStyle = {
-    maxWidth: '400px',
-    margin: 'auto',
+    maxWidth: '900px',
+    
+    marginBottom:'10px',
+    display: 'grid',
+    gap: '10px',
+    textAlign: 'center', // Center the form
+   /* width: '100%', // Set the width to 100% to ensure responsiveness*/
+  };
+
+  const labelStyle = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr', // 2 columns
+    alignItems: 'center',
+    marginBottom: '10px',
+    textAlign: 'center',
+    paddingRight: '10px',
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '8px',
+    boxSizing: 'border-box',
+    
+  };
+
+  const textareaStyle = {
+    width: '100%',
+    padding: '8px',
+    boxSizing: 'border-box',
+    height: '120px', // Adjust the height as needed
   };
 
   const buttonStyle = {
@@ -86,7 +119,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <form onSubmit={handleSubmit} style={formStyle}>
-            <div className="form-group">
+            <div className="form-group" style={labelStyle}>
               <label htmlFor="name">Name:</label>
               <input
                 type="text"
@@ -95,10 +128,11 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                style={inputStyle}
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group" style={labelStyle}>
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
@@ -107,10 +141,11 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                style={inputStyle}
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group" style={labelStyle}>
               <label htmlFor="subject">Subject:</label>
               <input
                 type="text"
@@ -119,10 +154,11 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
+                style={inputStyle}
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group" style={labelStyle}>
               <label htmlFor="message">Message:</label>
               <textarea
                 id="message"
@@ -130,6 +166,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                style={textareaStyle}
               />
             </div>
 
