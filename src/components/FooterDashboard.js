@@ -20,8 +20,8 @@ function FooterDashboard() {
         </ul>
         <ul className="footer-menu">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="#">About</Link></li>
-            <li><Link to="#">Contact</Link></li>
+            <li><Link to="/aboutus">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
             <li><Link to="#">Blog</Link></li>
          </ul>
         </div>

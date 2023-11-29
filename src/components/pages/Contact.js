@@ -6,6 +6,12 @@ function Contact() {
   return (
     <div>
         <HeaderDashboard/>
+            <div>
+                <p>
+                    adgjlhfdsdfghjk
+                    
+                </p>
+            </div>
 
         <FooterDashboard/>
     </div>
