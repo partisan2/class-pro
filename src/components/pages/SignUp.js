@@ -10,6 +10,7 @@ function SignUp() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const confirmPasswordRef = useRef()
+    const userIDRef = useRef()
     const { signup } = useAuth()
     const [error,setError] = useState()
     const [loading,setLoading] = useState(false)
@@ -32,6 +33,7 @@ function SignUp() {
                     userName:emailRef.current.value,
                     userType:"",
                     profilePic:"",
+                    userID:userIDRef.current.value,
                     timeStamp: serverTimestamp()
                 });
 
@@ -62,9 +64,9 @@ function SignUp() {
                         <input type='email' placeholder='Email' ref={emailRef} required />
                         <input type='password' placeholder='Password'ref={passwordRef} required />
                         <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
+                        <input type="text" placeholder="User ID" ref={userIDRef} required/>
                         <br/>
                         <button dissabled = {loading}>Sign Up</button>
-                        <br/>
                     </form>
                     <div className='to_login'>
                         Already Have An Account?
