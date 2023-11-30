@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+
 import HeaderDashboard from '../HeaderDashboard';
 import FooterDashboard from '../FooterDashboard';
 
@@ -28,6 +30,9 @@ const Contact = () => {
     });
   };
 
+  
+
+
   const containerStyle = {
     background: `url('https://www.hphi.life/hubfs/Page%20-%20Home_7.png') no-repeat center center fixed`,
     backgroundSize: 'cover',
@@ -37,7 +42,6 @@ const Contact = () => {
     gap: '20px',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
     padding: '50px',
   };
 
@@ -45,10 +49,11 @@ const Contact = () => {
     /*backgroundColor: 'rgba(255, 255, 255, 0.7)',*/
     padding: '20px',
     borderRadius: '10px',
+    color: 'white',
   };
 
   const getInTouchStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    backgroundColor: 'rgba(0, 255, 255, 0.3)',
     padding: '20px',
     borderRadius: '10px',
     display: 'flex',
@@ -60,11 +65,10 @@ const Contact = () => {
 
   const formStyle = {
     maxWidth: '900px',
-    
-    marginBottom:'10px',
+    marginBottom:'100px',
     display: 'grid',
     gap: '10px',
-    textAlign: 'center', // Center the form
+    textAlign: 'right', // Center the form
    /* width: '100%', // Set the width to 100% to ensure responsiveness*/
   };
 
@@ -106,10 +110,10 @@ const Contact = () => {
         {/* Contact Information */}
         <div style={contactInfoStyle}>
           <h3>Contact Information</h3>
-          <p>Email: example@email.com</p>
-          <p>Phone: +1234567890</p>
-          <p>Address: 198 West 21th Street, Suite 721 New York, NY 10016</p>
-          <p>Website: <a href="https://www.yoursite.com">yoursite.com</a></p>
+          <p><FaEnvelope />Email: example@email.com</p>
+          <p><FaPhone />Phone: +1234567890</p>
+          <p><FaMapMarkerAlt />Address: 198 West 21th Street, Suite 721 New York, NY 10016</p>
+          <p><FaMapMarkerAlt />Website: <a href="https://www.yoursite.com">yoursite.com</a></p>
         </div>
 
         {/* Get in Touch Section */}
@@ -178,6 +182,10 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      
+      
+
       <FooterDashboard />
     </div>
   );
