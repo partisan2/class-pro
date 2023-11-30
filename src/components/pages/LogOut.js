@@ -21,7 +21,7 @@ function LogOut() {
   return (
     <div>
         {error}
-      <strong>Email :</strong>{currentUser.email}
+        {console.log(currentUser.email)}
 
       <button onClick={handleLogout}>Log out</button>
     </div>

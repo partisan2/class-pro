@@ -8,9 +8,35 @@ function Profile() {
   return (
     <div>
       <HeaderDashboard/>
-      <Link to='/update-profile'>Update profile</Link>
-      <Link to='/update-password'>update password</Link>
-      <LogOut/>
+      <div className='about-me'>
+        <h3>User Details</h3>
+        <br/>
+        <tr>
+          <td className='name'><label>User Name</label></td>
+          <td><label>vihan</label></td>
+        </tr>
+        <br></br>
+        <tr>
+          <td className='name'><label>User Email</label></td>
+          <td><label>test@mail</label></td>
+        </tr>
+        <br/>
+        <tr>
+          <td className='name'><label>User Type</label></td>
+          <td><lable>Teacher</lable></td>
+        </tr>
+        <span>
+          <Link to='/update-profile'>Update profile</Link>
+        </span>
+        <br/>
+        <span>
+          <Link to='/update-password'>update password</Link>
+        </span>
+        <span>
+          <LogOut/>
+          <br/>
+        </span>
+      </div>
       <FooterDashboard/>
     </div>
   )

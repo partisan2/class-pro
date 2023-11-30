@@ -79,22 +79,28 @@ function Dashboard() {
     <div>
       <HeaderDashboard/>
       <div className='dashboard-container'>
-        <div className='upcming-act'>
-          <span>Assignments</span>
-          {upcomingAssignments}
+        <div className='banner'>
+          banner
         </div>
-        {/* upcoming event */}
-        <div className='upcming-event'>
-          <span className='upcming-event-name'>Upcoming Events</span>
-          {upcomingEvent}
-          <span><Link to='/events'>Events</Link></span>
+        <div>
+          <div className='upcming-act'>
+            <span>Upcoming Assignments</span>
+            {upcomingAssignments}
+            <span><Link to='/assignments'>Assignments</Link></span>
+          </div>
+          {/* upcoming event */}
+          <div className='upcming-event'>
+            <span className='upcming-event-name'>Upcoming Events</span>
+            {upcomingEvent}
+            <span><Link to='/events'>Events</Link></span>
+          </div>
         </div>
       </div>
       <div className='dashboard-notice'>
         <span>Notice</span>
       </div>
-      <div className='banner'>
-        banner
+      <div className='student-list'>
+        student list
       </div>
       <FooterDashboard/>
     </div>
@@ -127,5 +133,6 @@ function UpcomingAssignment({assignmentName,assignmentDue}){
     </table>
   )
 }
+
 
 export default Dashboard

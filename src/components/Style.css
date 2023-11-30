@@ -99,3 +99,31 @@
   background-color: aliceblue;
   border-radius: 5px;
 }
+
+.about-me{
+  width: 400px;
+  border: 1px solid #44318d;
+  margin: 20px;
+  position: relative;
+  left: 500px;
+}
+
+.about-me h3{
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-me td{
+  text-align: center;
+  
+}
+
+.about-me .name{
+  text-align: left;
+}
+
+.about-me label{
+  margin: 60px;
+  font-size: 18px;
+}
