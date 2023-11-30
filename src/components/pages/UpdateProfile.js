@@ -87,6 +87,7 @@ function UpdateProfile() {
                         <input type='text' placeholder='Name' ref={nameRef} />
                         <lable className='profile_pic'>Profile Picture</lable>
                         <input type='file'id='file' onChange={(e) => setFile(e.target.files[0])}/>
+                        {loading===100 && <span>image uploaded</span>}
                         <br/>
                         <button dissabled={loading !==null && loading<100 }>Update</button>
                         <br/>
