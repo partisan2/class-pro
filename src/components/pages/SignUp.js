@@ -65,7 +65,7 @@ function SignUp() {
                         <br/>
                         <input type='email' placeholder='Email' ref={emailRef} required />
                         <input type='password' placeholder='Password'ref={passwordRef} required />
-                        <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} requi
+                        <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
                         <input type='text' placeholder='User Id' ref={userIdRef} required/>
                         <br/>
                         <button dissabled = {loading}>Sign Up</button>
