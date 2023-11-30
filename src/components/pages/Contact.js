@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import HeaderDashboard from '../HeaderDashboard';
 import FooterDashboard from '../FooterDashboard';
 
@@ -109,10 +108,10 @@ const Contact = () => {
         {/* Contact Information */}
         <div style={contactInfoStyle}>
           <h3>Contact Information</h3>
-          <p><FaEnvelope />Email: example@email.com</p>
-          <p><FaPhone />Phone: +1234567890</p>
-          <p><FaMapMarkerAlt />Address: 198 West 21th Street, Suite 721 New York, NY 10016</p>
-          <p><FaMapMarkerAlt />Website: <a href="https://www.yoursite.com">yoursite.com</a></p>
+          <p>Email: example@email.com</p>
+          <p>Phone: +1234567890</p>
+          <p>Address: 198 West 21th Street, Suite 721 New York, NY 10016</p>
+          <p>Website: <a href="https://www.yoursite.com">yoursite.com</a></p>
         </div>
 
         {/* Get in Touch Section */}
