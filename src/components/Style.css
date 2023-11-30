@@ -125,5 +125,10 @@
 
 .about-me label{
   margin: 60px;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.about-me span{
+  margin-top: 10px;
+  margin-left: 140px;
 }
