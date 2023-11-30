@@ -15,6 +15,9 @@ import Assignment from "./components/pages/Assignment";
 import AddAssignment from "./components/pages/AddAssignment";
 import AboutUs from "./components/pages/AboutUs";
 import Contact from "./components/pages/Contact";
+import AddReport from "./components/pages/AddReport";
+import ResultSheet from "./components/pages/ResultSheet";
+import AllResults from "./components/pages/AllResults";
 
 
 
@@ -35,11 +38,12 @@ function App() {
             <Route path="/add-assignment" element={<PrivateRout><AddAssignment/></PrivateRout>}/>
             <Route path="/aboutus" element={<PrivateRout><AboutUs/></PrivateRout>}/>
             <Route path="/contact" element={<PrivateRout><Contact/></PrivateRout>}/>
+            <Route path="/add-result" element={<PrivateRout><AddReport/></PrivateRout>}/>
+            <Route path="/result-sheet" element={<PrivateRout><ResultSheet/></PrivateRout>}/>
+            <Route path="/all-results" element={<PrivateRout><AllResults/></PrivateRout>}/>
             <Route path="/signup" Component={SignUp}/>
             <Route path="/login" Component={LogIn}/>
             <Route path="/forgot-password" Component={ForgotPassword}/>
-            
-
           </Routes>
         </AuthProvider>
     </Router>

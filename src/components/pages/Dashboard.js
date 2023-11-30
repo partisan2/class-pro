@@ -2,14 +2,38 @@ import React, { useEffect, useState } from 'react'
 import HeaderDashboard from '../HeaderDashboard'
 import FooterDashboard from '../FooterDashboard'
 import { db } from '../../firebase'
-import { getDocs,collection,query,orderBy, where } from "firebase/firestore";
+import { getDocs,collection,query,orderBy, where,doc,getDoc } from "firebase/firestore";
+import { useAuth } from '../../contexts/AuthContext'
 import "../Style.css"
 import { Link } from 'react-router-dom';
 
 
 function Dashboard() {
-  const [ events,setEvents ] = useState()
-  const [ assignments,setAssignments ] = useState()
+  const [ events,setEvents ] = useState([])
+  const [ assignments,setAssignments ] = useState([])
+  const {currentUser} = useAuth();
+  const [ userType, setUserType ] =useState()
+  const [ users,setUsers ] = useState()
+  //---------fetch Data
+  // get usertype
+  useEffect(()=>{
+    const fetchData = async () =>{
+      try{
+        const docRef = doc(db, "Users", currentUser.uid);
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+          // console.log("Document data:", docSnap.data().email);
+          setUserType(docSnap.data().userType)
+          // console.log(docSnap.data().profilePic)
+        } else {
+          // docSnap.data() will be undefined in this case
+          console.log("No such document!");
+        }
+      }catch(r){console.log(r)}
+    }
+    fetchData()
+  },[currentUser.uid])
   // get ucoming events
   useEffect(()=>{
     const fetchData = async ()=>{
@@ -22,7 +46,7 @@ function Dashboard() {
         const currentDate = `${year}-${month}-${day}`
         // console.log(date)
         
-        const querySnapshot = await getDocs(query(collection(db, "Events"),where("eventDate","==",currentDate),orderBy("eventDate")));
+        const querySnapshot = await getDocs(query(collection(db, "Events"),where("eventDate",">=",currentDate),orderBy("eventDate")));
         querySnapshot.forEach((doc) => {
         list.push({ id : doc.id, eventName: doc.data().eventName,eventDate: doc.data().eventDate , eventTime: doc.data().eventTime})
       });
@@ -44,7 +68,7 @@ function Dashboard() {
         const month = date.getMonth()+1
         const year = date.getFullYear()
         const currentDate = `${year}-${month}-${day}`
-        
+        console.log(currentDate)
         
         const querySnapshot = await getDocs(query(collection(db, "Assignments"),where("assignmentDue",">=",currentDate),orderBy("assignmentDue")));
         querySnapshot.forEach((doc) => {
@@ -57,6 +81,35 @@ function Dashboard() {
     }
     fetchData()
   },[])
+
+  //get all students
+  useEffect(()=>{
+    const fetchData = async () =>{
+      let list = []
+      try{
+        const querySnapshot = await getDocs(query(collection(db, "Users"),where("userType","==","student")));
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, " => ", doc.data());
+        list.push({ id : doc.id ,...doc.data()})
+      });
+      setUsers(list)
+    //   console.log(list)
+
+      }catch(r){console.log(r)}
+    }
+    fetchData()
+  },[])
+
+  //---------object destruction
+  const studentList = users?.map(({userName,email,userId},index)=>{
+    return <StudentListLayout
+    key={index}
+    userName={userName}
+    userId={userId}
+    email={email}
+    />
+  })
 
   const upcomingEvent = events?.map(({eventName,eventDate,eventTime},index)=>{
     return <UpcomingEvent
@@ -100,14 +153,18 @@ function Dashboard() {
       <div className='dashboard-notice'>
         <span>Notice</span>
       </div>
+      {userType === "teacher" && 
       <div className='student-list'>
         student list
-      </div>
+        {studentList}
+      </div>}
       <FooterDashboard/>
     </div>
   )
 }
 
+
+//-------------- Layouts----------------------------------
 function UpcomingEvent({eventName,eventDate,eventTime}){
   return(
     <table>
@@ -125,13 +182,29 @@ function UpcomingEvent({eventName,eventDate,eventTime}){
 function UpcomingAssignment({assignmentName,assignmentDue}){
   return(
     <table>
+      <tbody>
       <tr>
         <th>{assignmentName}</th>
       </tr>
       <tr>
         <td>{assignmentDue}</td>
       </tr>
+      </tbody>
     </table>
+  )
+}
+
+function StudentListLayout({userName,email,userId}){
+  return(
+  <table>
+    <tbody>
+      <tr>
+        <td>{userName}</td>
+        <td>{email}</td>
+        <td>{userId}</td>
+      </tr>
+    </tbody>
+  </table>
   )
 }
 

@@ -30,6 +30,7 @@ function AddEvents() {
             });
             alert("data added")
             console.log("dump");
+            window.location.reload()
         }catch(r){console.log(r)}
     }
 
