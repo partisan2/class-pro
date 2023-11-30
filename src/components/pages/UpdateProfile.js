@@ -64,6 +64,8 @@ function UpdateProfile() {
                 userName:nameRef.current.value,
                 profilePic:image
               });
+              alert("data added")
+              window.location.reload()
         }catch(r){
             console.log(r)
             console.log(error)
