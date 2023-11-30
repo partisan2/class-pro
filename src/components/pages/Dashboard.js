@@ -84,13 +84,14 @@ function Dashboard() {
         </div>
         <div>
           <div className='upcming-act'>
-            <span>Upcoming Assignments</span>
+            <span className='upcming-name'>Upcoming Assignments</span>
             {upcomingAssignments}
             <span><Link to='/assignments'>Assignments</Link></span>
           </div>
+          <br/>
           {/* upcoming event */}
           <div className='upcming-event'>
-            <span className='upcming-event-name'>Upcoming Events</span>
+            <span className='upcming-name'>Upcoming Events</span>
             {upcomingEvent}
             <span><Link to='/events'>Events</Link></span>
           </div>

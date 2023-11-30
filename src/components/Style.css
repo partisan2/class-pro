@@ -66,17 +66,25 @@
   padding: 5px;
 }
 
+.upcming-act{
+  text-transform: capitalize;
+  padding: 10px;
+  border: 1px solid #44318d;
+  border-radius: 5px;
+}
+
 .upcming-event{
   text-transform: capitalize;
   padding: 10px;
   border: 1px solid #44318d ;
+  border-radius: 5px;
 }
 
 .upcming-event td{
   padding: 5px;
 }
 
-.upcming-event-name{
+.upcming-name{
   font-size: 18px;
   font-weight: bold;
 }
