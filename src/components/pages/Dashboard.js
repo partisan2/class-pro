@@ -70,7 +70,7 @@ function Dashboard() {
         const currentDate = `${year}-${month}-${day}`
         console.log(currentDate)
         
-        const querySnapshot = await getDocs(query(collection(db, "Assignments"),where("assignmentDue",">=",currentDate),orderBy("assignmentDue")));
+        const querySnapshot = await getDocs(query(collection(db, "Assignments"),orderBy("assignmentDue")));
         querySnapshot.forEach((doc) => {
         list.push({ id : doc.id, assignmentName: doc.data().assignmentName,assignmentDue: doc.data().assignmentDue})
       });
@@ -150,12 +150,9 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className='dashboard-notice'>
-        <span>Notice</span>
-      </div>
       {userType === "teacher" && 
       <div className='student-list'>
-        student list
+        <h3>student list</h3>
         {studentList}
       </div>}
       <FooterDashboard/>
@@ -196,15 +193,17 @@ function UpcomingAssignment({assignmentName,assignmentDue}){
 
 function StudentListLayout({userName,email,userId}){
   return(
-  <table>
-    <tbody>
-      <tr>
-        <td>{userName}</td>
-        <td>{email}</td>
-        <td>{userId}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div>
+    <table>
+      <tbody>
+        <tr>
+          <td><p>{userId}</p></td>
+          <td><p>{email}</p></td>
+          <td><p>{userName}</p></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
   )
 }
 

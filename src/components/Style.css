@@ -140,3 +140,14 @@
   margin-top: 10px;
   margin-left: 140px;
 }
+
+.student-list{
+  border: 1px solid #44318d;
+  margin: 30px;
+}
+
+.student-list h3{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
