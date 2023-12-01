@@ -38,13 +38,11 @@ function LogIn() {
         </div>
         <div className='form-login'>
                     <form onSubmit={handleSubmit}>
-                        <h1 className='signup_h'>LogIn</h1>
-                        <br/>
-                        <input name='email' type='email' placeholder='Email' ref={emailRef} required />
-                        <input name='password' type='password' placeholder='Password'ref={passwordRef} required />
+                        <h1 className='signup_h'>LOG IN</h1>
+                        <input className='input-box' name='email' type='email' placeholder='Email' ref={emailRef} required />
+                        <input className='input-box' name='password' type='password' placeholder='Password'ref={passwordRef} required />
                         <div className='forgot_password'><Link to='/forgot-password'>Forgot Password?</Link></div>
                         <button dissabled = {loading}>Login</button>
-                        <br/>
                     </form>
                     <br/>
                     <div className='to_signup'>
