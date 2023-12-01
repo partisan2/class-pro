@@ -151,3 +151,18 @@
   align-items: center;
   text-align: center;
 }
+
+.teacher-function{
+  border: 1px solid #44318d;
+  margin: 30px;
+}
+
+.teacher-function span{
+  padding-right: 10px;
+}
+
+.banner-img{
+  width: 1300px;
+  height: 500px;
+  border-radius: 0;
+}
