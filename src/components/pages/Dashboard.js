@@ -151,6 +151,11 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      {userType === "student" &&
+        <div className='user-function'>
+          <span><linK to='/result-sheet'>Result Sheet</linK></span>
+        </div>
+      }
       {userType === "teacher" && 
       <div className='teacher-function'>
         <span><Link to='/add-result'>Add Result</Link></span>

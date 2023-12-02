@@ -166,3 +166,11 @@
   height: 500px;
   border-radius: 0;
 }
+
+.block{
+  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
