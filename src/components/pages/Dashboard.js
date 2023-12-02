@@ -133,7 +133,8 @@ function Dashboard() {
       <HeaderDashboard/>
       <div className='dashboard-container'>
         <div className='banner'>
-          banner
+          <img className='banner-img' src='https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          alt=''/>
         </div>
         <div>
           <div className='upcming-act'>
@@ -150,6 +151,19 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      {userType === "student" &&
+        <div className='user-function'>
+          <span><linK to='/result-sheet'>Result Sheet</linK></span>
+        </div>
+      }
+      {userType === "teacher" && 
+      <div className='teacher-function'>
+        <span><Link to='/add-result'>Add Result</Link></span>
+        <span><Link to='/all-results'>All Result</Link></span>
+        <span><Link to='/add-assignment'>Add assignment</Link></span>
+        <span><Link to='/add-events'>Add Events</Link></span>
+      </div>
+      }
       {userType === "teacher" && 
       <div className='student-list'>
         <h3>student list</h3>

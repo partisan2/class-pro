@@ -45,12 +45,12 @@ function AddReport() {
             });
             alert("data added")
             console.log("dump");
-            
+
         }catch(r){console.log(r)}
 
     }
-   
 
+    
   return (
     <div>
       <HeaderDashboard/>
