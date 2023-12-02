@@ -5,10 +5,10 @@
 
 .container{
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
 }
 
 .user-list{
     width: 100vw;
-    height: auto;
+    height: 50vh;
 }

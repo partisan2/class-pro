@@ -3,11 +3,13 @@ import { db } from '../../firebase'
 import { getDocs,collection,query,where } from "firebase/firestore";
 import UserListLayout from './UserListLayout';
 import './admin.css'
+import ContactUsForms from './ContactUsForms';
 
 function AdminDashboard() {
     const [ teacherList,setTeacherList ] = useState()
     const [ parentList,setParentList ] =useState()
     const [ studentList,setStudentList ] = useState()
+    const [ forms,setForms ] = useState()
     
     //get all teacher
   useEffect(()=>{
@@ -92,6 +94,35 @@ function AdminDashboard() {
     userType={userType}
     />
   })
+
+  //get all contact us dcuments
+  useEffect(()=>{
+    const fetchData = async () =>{
+      let list = []
+      try{
+        const querySnapshot = await getDocs(query(collection(db, "Forms")));
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, " => ", doc.data());
+        list.push({ id : doc.id ,...doc.data()})
+      });
+      setForms(list)
+      console.log(list)
+
+      }catch(r){console.log(r)}
+    }
+    fetchData()
+  },[])
+
+  const form = forms?.map(({name,email,subject,message},index)=>{
+    return <ContactUsForms
+    key={index}
+    name={name}
+    email={email}
+    subject={subject}
+    message={message}
+    />
+  })
  
   return (
     <div className='admin-dashboard'>
@@ -112,7 +143,7 @@ function AdminDashboard() {
           </div>
         </section>
           <div className='contact-us-messages'>
-            contact us messages
+            {form}
           </div>
       </div>
   )
