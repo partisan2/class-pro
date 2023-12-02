@@ -1,0 +1,14 @@
+.admin-dashboard{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.user-list{
+    width: 100vw;
+    height: auto;
+}
