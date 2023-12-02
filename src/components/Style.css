@@ -1,8 +1,16 @@
-*{
+* {
   padding: 0;
   margin: 0;
+  font-style: italic;
+  /* Add italic style to all elements */
 }
 
+body {
+  font-family: 'Your Font Here', sans-serif;
+  /* Specify your preferred font family */
+  margin: 0;
+  padding: 0;
+}
 .header-dashboard{
   width: 100vw;
   height: auto;
@@ -55,7 +63,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: aliceblue;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -80,9 +87,6 @@
   border-radius: 5px;
 }
 
-.upcming-event td{
-  padding: 5px;
-}
 
 .upcming-name{
   font-size: 18px;
@@ -150,4 +154,113 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Footer styles */
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Dashboard container styles */
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+/* Banner styles */
+.banner img {
+  width: 900px;
+  /* Make the image responsive to its container */
+  height: 600px;
+  /* Maintain the aspect ratio */
+  display: block;
+  /* Remove any extra spacing */
+  border-radius: 10px;
+  /* Add a border-radius for a rounded corner effect */
+}
+
+/* Upcoming activities, events, and student list styles */
+.upcoming-act,
+.upcoming-event,
+.student-list {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 80%;
+  /* Increase width to 80% */
+  margin-left: auto;
+  /* Center the elements by setting margin-left and margin-right to auto */
+  margin-right: auto;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Links styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+
+  .upcoming-act,
+  .upcoming-event,
+  .student-list,
+  table,
+  th,
+  td {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    /* Adjusted width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .banner img {
+    width: 100%;
+  }
 }
