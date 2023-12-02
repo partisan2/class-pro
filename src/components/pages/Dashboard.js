@@ -178,57 +178,79 @@ function Dashboard() {
       </div>
     )
   }
+  if(userType !=="admin"){
 
-  return (
-    <div>
-      <HeaderDashboard />
-      <div className="dashboard-container">
-        <div className="banner">
-          <img
-            src={DesignerImage}
-            alt="Designer"
-            height="500px"
-            width="500px"
-          />
-        </div>
-        <div>
-          <div className="upcming-act">
-            <span className="upcming-name">Upcoming Assignments</span>
-            {upcomingAssignments}
-            <span className="dashboard-button">
-              <Link
-                to="/assignments"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Assignments
-              </Link>
-            </span>
+    return (
+      <div>
+        <HeaderDashboard />
+        <div className="dashboard-container">
+          <div className="banner">
+            <img
+              src={DesignerImage}
+              alt="Designer"
+              height="500px"
+              width="500px"
+            />
           </div>
-          <br />
-          {/* upcoming event */}
-          <div className="upcming-event">
-            <span className="upcming-name">Upcoming Events</span>
-            {upcomingEvent}
-            <span className="dashboard-button">
-              <Link
-                to="/events"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Events
-              </Link>
-            </span>
+          <div>
+            <div className="upcming-act">
+              <span className="upcming-name">Upcoming Assignments</span>
+              {upcomingAssignments}
+              <span className="dashboard-button">
+                <Link
+                  to="/assignments"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Assignments
+                </Link>
+              </span>
+            </div>
+            <br />
+            {/* upcoming event */}
+            <div className="upcming-event">
+              <span className="upcming-name">Upcoming Events</span>
+              {upcomingEvent}
+              <span className="dashboard-button">
+                <Link
+                  to="/events"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Events
+                </Link>
+              </span>
+            </div>
           </div>
         </div>
+        {userType === "teacher" &&
+          <div className="d-actions">
+            <tbody>
+              <tr>
+                <td>
+                  <Link to='add-events'>Add Events</Link>
+                </td>
+                <td>
+                  <Link to='add-result'>Add Results</Link>
+                </td>
+                <td>
+                  <Link to='add-assignment'>Add Assignment</Link>
+                </td>
+                <td>
+                  <Link to='all-results'>See All Results</Link>
+                </td>
+              </tr>
+            </tbody>
+          </div>
+        }
+        {userType === "teacher" && (
+          <div className="student-list">
+            <h3>student list</h3>
+            {studentList}
+          </div>
+        )}
+        <FooterDashboard />
       </div>
-      {userType === "teacher" && (
-        <div className="student-list">
-          <h3>student list</h3>
-          {studentList}
-        </div>
-      )}
-      <FooterDashboard />
-    </div>
-  );
+    );
+  }
 }
 
 //-------------- Layouts----------------------------------
