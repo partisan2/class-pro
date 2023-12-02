@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { db } from '../../firebase'
 import { getDocs,collection,query,where,doc,updateDoc } from "firebase/firestore";
+import "./UnAssigned.css";
 
 
 
@@ -65,28 +66,29 @@ function UnAssignedUserLyout({userName,userId,email,userDbId}){
         }
     
     }
-    return(
-        <form onSubmit={handleSubmit}>
+    return (
+      <form onSubmit={handleSubmit}>
         <tbody>
-            <tr>
-                <td>{userId}</td>
-                <td>{userName}</td>
-                <td>{email}</td>
-                    <td>
-                        <select name='privilage' id='privilage'>
-                            <option value="">Choose</option>
-                            <option value="student">Student</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="parent">Parent</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type='submit'/>
-                    </td>
-            </tr>
+          <tr>
+            <td>{userId}</td>
+            <td>{userName}</td>
+            <td>{email}</td>
+            <td>
+              <select name="privilage" id="privilage">
+                <option value="">Choose</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="parent">Parent</option>
+              </select>
+            </td>
+            <td>
+              <input type="submit" id="us-submit" />
+            </td>
+          </tr>
         </tbody>
-        </form>
-    )
+        <hr />
+      </form>
+    );
 }
 
 export default UnAssigned

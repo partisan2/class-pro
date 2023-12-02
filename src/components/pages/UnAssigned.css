@@ -1,0 +1,28 @@
+#privilage {
+  width: 200px;
+  padding: 10px;
+  color: #3498db;
+  font-size: 17px;
+  margin: 3%;
+  border: 1px solid #3498db;
+  /* Set your desired border style and color */
+}
+
+#privilage:hover {
+  color: #3498db;
+}
+#us-submit {
+  background: #fff;
+  border: 2px solid #3498db;
+  color: #3498db;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+
+}
+
+#us-submit:hover {
+  background: #3498db;
+  color: #fff;
+}

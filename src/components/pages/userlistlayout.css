@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(to right bottom,#b9acee, #d694c8, #cf96a6,#d19c8f,#d19c8f,#cf96a6,#d694c8,#b9acee);
+}
+div {
+  margin: 20px;
+  /* Add some margin for better spacing */
+}
+
+/* Style for the table */
+table {
+  width: 100%;
+  /* border-collapse: none; */
+  margin-top: 20px;
+}
+
+/* Style for table rows */
+tr {
+  border-bottom: 1px solid #ddd;
+  background-color:#E8D5B5;
+  color:#000000;
+}
+
+/* Style for table data cells */
+td:nth-child(even) {
+  padding: 10px;
+  width:300px;
+}
+td:nth-child(odd) {
+  padding: 10px;
+  width: 200px;
+}
+
