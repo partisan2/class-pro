@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { db } from '../../firebase'
 import { getDocs,collection,query,where } from "firebase/firestore";
 import UserListLayout from './UserListLayout';
-import './admin.css'
+// import './admin.css'
 import ContactUsForms from './ContactUsForms';
 import UnAssigned from './UnAssigned';
 
@@ -126,27 +126,27 @@ function AdminDashboard() {
   })
 
   return (
-    <div className='admin-dashboard'>
-        <section className='container'>
-          <div className='user-list'>
-            <div className='teacher-list'>
+    <div className='ad-admin-dashboard'>
+        <section className='ad-container'>
+          <div className='ad-user-list'>
+            <div className='ad-teacher-list'>
                 <h3>Teachers</h3>
               {teachers}
             </div>
-            <div className='parent-list'>
+            <div className='ad-parent-list'>
                 <h3>Parents</h3>
               {parents}
             </div>
-            <div className='students-list'>
+            <div className='ad-students-list'>
                 <h3>Students</h3>
               {students}
             </div>
-            <div className='not-assigned-users'>
+            <div className='ad-not-assigned-users'>
               <UnAssigned/>
             </div>
           </div>
         </section>
-          <div className='contact-us-messages'>
+          <div className='ad-contact-us-messages'>
             {form}
           </div>
       </div>

@@ -1,18 +1,18 @@
 import React from 'react'
+import './userlistlayout.css';
 
 function UserListLayout({userName,email,userType}) {
   return (
-    <div>
-      <tbody>
-        <tr>
+      <div>
+        <tbody>
+          <tr>
             <td>{userName}</td>
-            {/* <td>{userId}</td> */}
             <td>{email}</td>
             <td>{userType}</td>
-        </tr>
-      </tbody>
-    </div>
-  )
+          </tr>
+        </tbody>
+      </div>
+  );
 }
 
 export default UserListLayout
