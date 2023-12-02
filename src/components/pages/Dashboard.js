@@ -186,8 +186,13 @@ function Dashboard() {
           <div className="upcming-act">
             <span className="upcming-name">Upcoming Assignments</span>
             {upcomingAssignments}
-            <span>
-              <Link to="/assignments">Assignments</Link>
+            <span className="dashboard-button">
+              <Link
+                to="/assignments"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Assignments
+              </Link>
             </span>
           </div>
           <br />
@@ -195,8 +200,13 @@ function Dashboard() {
           <div className="upcming-event">
             <span className="upcming-name">Upcoming Events</span>
             {upcomingEvent}
-            <span>
-              <Link to="/events">Events</Link>
+            <span className="dashboard-button">
+              <Link
+                to="/events"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Events
+              </Link>
             </span>
           </div>
         </div>
