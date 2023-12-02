@@ -4,6 +4,7 @@ import { getDocs,collection,query,where } from "firebase/firestore";
 import UserListLayout from './UserListLayout';
 import './admin.css'
 import ContactUsForms from './ContactUsForms';
+import UnAssigned from './UnAssigned';
 
 function AdminDashboard() {
     const [ teacherList,setTeacherList ] = useState()
@@ -123,22 +124,25 @@ function AdminDashboard() {
     message={message}
     />
   })
- 
+
   return (
     <div className='admin-dashboard'>
         <section className='container'>
           <div className='user-list'>
             <div className='teacher-list'>
+                <h3>Teachers</h3>
               {teachers}
             </div>
             <div className='parent-list'>
+                <h3>Parents</h3>
               {parents}
             </div>
             <div className='students-list'>
+                <h3>Students</h3>
               {students}
             </div>
             <div className='not-assigned-users'>
-              not assigned
+              <UnAssigned/>
             </div>
           </div>
         </section>

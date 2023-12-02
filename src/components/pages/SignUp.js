@@ -38,6 +38,7 @@ function SignUp() {
           userName: emailRef.current.value,
           userType: "",
           profilePic: "",
+          userDbId:res.user.uid,
           userId: userIdRef.current.value,
           timeStamp: serverTimestamp(),
         });
