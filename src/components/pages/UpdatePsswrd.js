@@ -41,19 +41,22 @@ function UpdatePsswrd() {
   return (
     <div>
         <HeaderDashboard/>
-        <div className='form'>
+        <div className='Up-ps'>
         {error && <span>{error}</span>}
-        <form onSubmit={handleSubmit}>
-            <h1 className='signup_h'>Update Password</h1>
-            <input type='password' placeholder='Password'ref={passwordRef} required />
-            <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
-            <br/>         
-            <button dissabled = {loading}>Update Password</button>
-            <br/>
-            </form>
-            <div>
-                <Link to="/" className="cancel-button">Cancel</Link>
-            </div>
+        <div className='UP-PS-form'>
+            <form onSubmit={handleSubmit}>
+                <h1>Update Password</h1>
+                <input type='password' placeholder='Password'ref={passwordRef} required />
+                <input type='password' placeholder='Confirm Password' ref={confirmPasswordRef} required/>
+                <br/>         
+                <button dissabled = {loading}>Update Password</button>
+                </form>
+                <br/>
+                <div>
+                    <Link to="/" className="cancel-button">Cancel</Link>
+                </div>
+                <br/>
+        </div>
         </div>
         <FooterDashboard/>
     </div>

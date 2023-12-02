@@ -1,0 +1,55 @@
+.pp-contentContainer{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF5FF;
+}
+
+.pp-content{
+    margin: 20px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.pp-content h2{
+    text-align: center;
+    padding: 10px;
+}
+
+.pp-userDetails{
+    padding: 5px;
+}
+
+.pp-userDetails td{
+    padding: 5px;
+}
+
+.pp-userDetailslink{
+    padding: 30px 0;
+}
+
+.pp-label{
+    font-weight: bold;
+}
+
+.pp-link{
+    margin-left: 20px;
+    padding: 14px 5px;
+    border-radius: 12px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    color: #3498db;
+    transition:  0.3s, color 0.3s;
+}
+
+.pp-link:hover{
+    background-color: #3498db;
+    color: #fff;
+}
+
+.pp-logout{
+    margin-left: 100px;
+}
