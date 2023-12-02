@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from '../../firebase';
+import { useAuth } from '../../contexts/AuthContext';
 import HeaderDashboard from '../HeaderDashboard';
 import FooterDashboard from '../FooterDashboard';
 
 const Contact = () => {
+  const { currentUser } = useAuth()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,11 +19,25 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // You can implement the logic to send the message here
     console.log('Message sent:', formData);
     // Reset the form after submitting
+    try{
+      const id = currentUser.uid+(new Date().getTime().toString())
+      // console.log(id)
+      await setDoc(doc(db, "Forms", id), {
+          name:formData.name,
+          email:formData.email,
+          subject:formData.subject,
+          message:formData.message,
+          timeStamp: serverTimestamp()
+      });
+      alert("data added")
+      // console.log("dump");
+      window.location.reload()
+  }catch(r){console.log(r)}
     setFormData({
       name: '',
       email: '',
