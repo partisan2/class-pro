@@ -5,12 +5,18 @@ import UserListLayout from './UserListLayout';
 import './admin.css'
 import ContactUsForms from './ContactUsForms';
 import UnAssigned from './UnAssigned';
+import HeaderDashboard from '../HeaderDashboard';
+
+
+
 
 function AdminDashboard() {
     const [ teacherList,setTeacherList ] = useState()
     const [ parentList,setParentList ] =useState()
     const [ studentList,setStudentList ] = useState()
     const [ forms,setForms ] = useState()
+    
+
     
     //get all teacher
   useEffect(()=>{
@@ -127,6 +133,7 @@ function AdminDashboard() {
 
   return (
     <div className='ad-admin-dashboard'>
+        <HeaderDashboard/>
         <section className='ad-container'>
           <div className='ad-user-list'>
             <div className='ad-teacher-list'>
@@ -141,14 +148,17 @@ function AdminDashboard() {
                 <h3>Students</h3>
               {students}
             </div>
+          </div>
+          <hr/>
             <div className='ad-not-assigned-users'>
+                <h3>Set Privillages</h3>
               <UnAssigned/>
             </div>
-          </div>
-        </section>
           <div className='ad-contact-us-messages'>
+            <h3>User Messages</h3>
             {form}
           </div>
+        </section>
       </div>
   )
 }

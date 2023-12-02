@@ -1,3 +1,53 @@
 .ad-admin-dashboard{
-    margin:5%;
+    width: 100vw;
+    height: 100vh;
 }
+
+.ad-container{
+    padding: 20px;
+    background-color: #EEF5FF;
+}
+
+.ad-container .ad-user-list{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.ad-user-list div{
+    background-color: #CDFAD5;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.ad-not-assigned-users{
+    margin: 20px 0;
+}
+
+.ad-not-assigned-users h3{
+    margin-bottom: 10px;
+}
+
+.ad-contact-us-message{
+    margin-top: 10px;
+}
+.ad-contact-us-message h3{
+    padding-top: 10px;
+}
+
+.CU-div{
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.CU-td{
+    background-color: #CDFAD5;
+    min-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+}
+
+
+

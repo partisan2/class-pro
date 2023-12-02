@@ -67,13 +67,13 @@ function UnAssignedUserLyout({userName,userId,email,userDbId}){
     
     }
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='UA-form'>
         <tbody>
-          <tr>
-            <td>{userId}</td>
-            <td>{userName}</td>
-            <td>{email}</td>
-            <td>
+          <tr className='UA-tr'>
+            <td className='UA-td'>{userId}</td>
+            <td className='UA-td'>{userName}</td>
+            <td className='UA-td'>{email}</td>
+            <td className='UA-td'>
               <select name="privilage" id="privilage">
                 <option value="">Choose</option>
                 <option value="student">Student</option>
@@ -81,7 +81,7 @@ function UnAssignedUserLyout({userName,userId,email,userDbId}){
                 <option value="parent">Parent</option>
               </select>
             </td>
-            <td>
+            <td className='UA-td'>
               <input type="submit" id="us-submit" />
             </td>
           </tr>

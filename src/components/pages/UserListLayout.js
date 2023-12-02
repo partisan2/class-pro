@@ -3,12 +3,12 @@ import './userlistlayout.css';
 
 function UserListLayout({userName,email,userType}) {
   return (
-      <div>
+      <div className='UL-conatiner'>
         <tbody>
-          <tr>
-            <td>{userName}</td>
-            <td>{email}</td>
-            <td>{userType}</td>
+          <tr className='UL-tr'>
+            <td className='UL-td'>{userName}</td>
+            <td className='UL-td'>{email}</td>
+            <td className='UL-td'>{userType}</td>
           </tr>
         </tbody>
       </div>

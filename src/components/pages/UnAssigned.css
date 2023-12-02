@@ -18,11 +18,37 @@
   cursor: pointer;
   font-size: 16px;
   padding: 5px 10px;
-  transition: background 0.3s, color 0.3s;
+  transition:  0.3s, color 0.3s;
 
 }
 
 #us-submit:hover {
   background: #3498db;
   color: #fff;
+}
+
+.UA-form{
+  align-items: start;
+}
+
+.UA-tr {
+  border-bottom: 1px solid #ddd;
+  color:#000000;
+  background-color:#F1EFEF;
+  border: 1px solid #000;
+}
+
+/* Style for table data cells */
+.UA-td{
+  text-align: left;
+  font-size: 18px;
+}
+
+.UA-td:nth-child(even) {
+  padding: 10px;
+  width:100px;
+}
+.UA-td:nth-child(odd) {
+  padding: 10px;
+  width: 100px;  
 }
