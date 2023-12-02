@@ -18,6 +18,7 @@ import Contact from "./components/pages/Contact";
 import AddReport from "./components/pages/AddReport";
 import ResultSheet from "./components/pages/ResultSheet";
 import AllResults from "./components/pages/AllResults";
+import './App.css'
 
 
 

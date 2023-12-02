@@ -77,19 +77,25 @@ function UpdateProfile() {
   return (
       <div>
         <HeaderDashboard/>
-        <div className='container'> 
+        <div className='UP-container'> 
             {/* <Header/> */}
             <div className='error'>
                 {error && <span>{error}</span>}
             </div>
-            <div className='form-signup'>
+            <div className='UP-form-signup'>
                     <form onSubmit={handleUpdate}>
-                        <h1 className='signup_h'>Update Profile</h1>
+                        <h1>Update Profile</h1>
                         <br/>
-                        <label className='name'>Name</label>
-                        <input type='text' placeholder='Name' ref={nameRef} />
-                        <lable className='profile_pic'>Profile Picture</lable>
-                        <input type='file'id='file' onChange={(e) => setFile(e.target.files[0])}/>
+                        <tbody>
+                            <tr>
+                                <td className='UP-form-td'><label className='name'>Name</label></td>
+                                <td className='UP-form-td'><input type='text' placeholder='Name' ref={nameRef} /></td>
+                            </tr>
+                            <tr>
+                                <td className='UP-form-td'><lable className='profile_pic'>Profile Picture</lable></td>
+                                <td className='UP-form-td'><input type='file'id='file' onChange={(e) => setFile(e.target.files[0])}/></td>
+                            </tr>
+                        </tbody>
                         {loading===100 && <span>image uploaded</span>}
                         <br/>
                         <button dissabled={loading !==null && loading<100 }>Update</button>

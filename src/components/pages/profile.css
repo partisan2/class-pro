@@ -1,65 +1,55 @@
-body {
-  margin: -10px;
-  padding: -10%;
+.pp-contentContainer{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF5FF;
 }
 
-#root {
-  height: 100%;
-  margin:0;
-  padding:0;
-}
-div{
-  margin:0;
-}
-.pp-contentContainer {
-  margin: 100px;
-  padding: 0;
-}
-.pp-contentContainer {
-  border: 1px solid black;
-  padding: 20px;
-  align-items: center;
-  width: 600px;
-}
-.pp-userDetails {
-  margin-bottom: 10px;
-  
-}
-tbody{
-  margin:20px;
-  border:collapse;
-  background-color:#292828;
-}
-.pp-label {
-  font-weight: bold;
-  margin-right: 10px;
-}
-#pp-userDetailsid{
-  display: flex;
-  margin:20px 100px 20px;
-}
-.pp-userDetailSpan {
-  color: #333;
-  /* You can adjust the color as needed */
-}
-h2 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom:10px;
-}
-.pp-link {
-  display: block;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #ffffff;
-  padding:10px;
-  width:145px;
-  height:30px;
-  text-align:centre;
-  background-color:#c21ac7;
-  /* You can adjust the color as needed */
+.pp-content{
+    margin: 20px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
-.pp-link:hover {
-  text-decoration: none;
+.pp-content h2{
+    text-align: center;
+    padding: 10px;
+}
+
+.pp-userDetails{
+    padding: 5px;
+}
+
+.pp-userDetails td{
+    padding: 5px;
+}
+
+.pp-userDetailslink{
+    padding: 30px 0;
+}
+
+.pp-label{
+    font-weight: bold;
+}
+
+.pp-link{
+    margin-left: 20px;
+    padding: 14px 5px;
+    border-radius: 12px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    color: #3498db;
+    transition:  0.3s, color 0.3s;
+}
+
+.pp-link:hover{
+    background-color: #3498db;
+    color: #fff;
+}
+
+.pp-logout{
+    margin-left: 100px;
 }

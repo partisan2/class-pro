@@ -65,7 +65,7 @@ function Events() {
   })
 
   return (
-    <div>
+    <div className='eve-wrapper'>
       <HeaderDashboard/>
         {userType === "teacher" && <Link to='/add-events'>Add Events</Link>}
         <div className='block'>

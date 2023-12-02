@@ -42,42 +42,43 @@ function Profile() {
     <div>
       <HeaderDashboard />
       <div className="pp-contentContainer">
+        <div className="pp-content">
         <h2>User Details</h2>
         <tbody>
           <tr className="pp-userDetails">
             <td>
-              <label className="pp-label">User Name:</label>
+              <label className="pp-label">User Name </label>
             </td>
             <td>
-              <span className="pp-userDetailSpan">{userName}</span>
-            </td>
-          </tr>
-          <tr className="pp-userDetails">
-            <td>
-              <label className="pp-label">User Email:</label>
-            </td>
-            <td>
-              <span className="pp-userDetailSpan">{userEmail}</span>
+              <span className="pp-userDetailSpan">:{userName}</span>
             </td>
           </tr>
           <tr className="pp-userDetails">
             <td>
-              <label className="pp-label">User Type:</label>
+              <label className="pp-label">User Email </label>
             </td>
             <td>
-              <span className="pp-userDetailSpan">{userType}</span>
+              <span className="pp-userDetailSpan">: {userEmail}</span>
             </td>
           </tr>
           <tr className="pp-userDetails">
             <td>
-              <label className="pp-label">User ID:</label>
+              <label className="pp-label">User Type </label>
             </td>
             <td>
-              <span className="pp-userDetailSpan">{userId}</span>
+              <span className="pp-userDetailSpan">: {userType}</span>
+            </td>
+          </tr>
+          <tr className="pp-userDetails">
+            <td>
+              <label className="pp-label">User ID </label>
+            </td>
+            <td>
+              <span className="pp-userDetailSpan">: {userId}</span>
             </td>
           </tr>
         </tbody>
-        <div className="pp-userDetails" id="pp-userDetailsid">
+        <div className="pp-userDetailslink" id="pp-userDetailsid">
           <Link to="/update-profile" className="pp-link">
             Update Profile
           </Link>
@@ -85,8 +86,12 @@ function Profile() {
             Update Password
           </Link>
         </div>
-        <LogOut />
+        <br/>
+        <div className='pp-logout'>
+          <LogOut />
+        </div>
       </div>
+    </div>
       <FooterDashboard />
     </div>
   );

@@ -181,7 +181,7 @@ function Dashboard() {
   if(userType !=="admin"){
 
     return (
-      <div>
+      <div className="dashboard-wrapper">
         <HeaderDashboard />
         <div className="dashboard-container">
           <div className="banner">
@@ -191,6 +191,26 @@ function Dashboard() {
               height="500px"
               width="500px"
             />
+            {userType === "teacher" &&
+              <div className="d-actions">
+                <tbody>
+                  <tr>
+                    <td>
+                      <Link to='add-events'>Add Events</Link>
+                    </td>
+                    <td>
+                      <Link to='add-result'>Add Results</Link>
+                    </td>
+                    <td>
+                      <Link to='add-assignment'>Add Assignment</Link>
+                    </td>
+                    <td>
+                      <Link to='all-results'>See All Results</Link>
+                    </td>
+                  </tr>
+                </tbody>
+              </div>
+            }
           </div>
           <div>
             <div className="upcming-act">
@@ -221,29 +241,25 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        {userType === "teacher" &&
-          <div className="d-actions">
-            <tbody>
-              <tr>
-                <td>
-                  <Link to='add-events'>Add Events</Link>
-                </td>
-                <td>
-                  <Link to='add-result'>Add Results</Link>
-                </td>
-                <td>
-                  <Link to='add-assignment'>Add Assignment</Link>
-                </td>
-                <td>
-                  <Link to='all-results'>See All Results</Link>
-                </td>
-              </tr>
-            </tbody>
-          </div>
-        }
+        <hr/>
         {userType === "teacher" && (
           <div className="student-list">
             <h3>student list</h3>
+            <table className="dash-st-list">
+        <tbody>
+          <tr className="dash-st-list-tr">
+            <td className="dash-st-list-td-head">
+              <p>Student ID</p>
+            </td>
+            <td className="dash-st-list-td-head">
+              <p>Email</p>
+            </td>
+            <td className="dash-st-list-td-head">
+              <p>Student Name</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
             {studentList}
           </div>
         )}
@@ -256,27 +272,29 @@ function Dashboard() {
 //-------------- Layouts----------------------------------
 function UpcomingEvent({ eventName, eventDate, eventTime }) {
   return (
-    <table>
-      <tr>
-        <th>{eventName}</th>
-        <th>Time</th>
+    <table className="dash-up-eve">
+      <tbody>
+      <tr className="dash-up-eve-tr">
+        <th className="dash-up-eve-th">{eventName}</th>
+        <th className="dash-up-eve-th">Time</th>
       </tr>
-      <tr>
-        <td>{eventDate}</td>
-        <td>{eventTime}</td>
+      <tr className="dash-up-eve-tr">
+        <td className="dash-up-eve-td">{eventDate}</td>
+        <td className="dash-up-eve-td">{eventTime}</td>
       </tr>
+      </tbody>
     </table>
   );
 }
 
 function UpcomingAssignment({ assignmentName, assignmentDue }) {
   return (
-    <table>
+    <table className="dash-up-act">
       <tbody>
-        <tr>
+        <tr className="dash-up-act-tr">
           <th>{assignmentName}</th>
         </tr>
-        <tr>
+        <tr className="dash-up-act-tr">
           <td>{assignmentDue}</td>
         </tr>
       </tbody>
@@ -287,16 +305,16 @@ function UpcomingAssignment({ assignmentName, assignmentDue }) {
 function StudentListLayout({ userName, email, userId }) {
   return (
     <div>
-      <table>
+      <table className="dash-st-list">
         <tbody>
-          <tr>
-            <td>
+          <tr className="dash-st-list-tr">
+            <td className="dash-st-list-td">
               <p>{userId}</p>
             </td>
-            <td>
+            <td className="dash-st-list-td">
               <p>{email}</p>
             </td>
-            <td>
+            <td className="dash-st-list-td">
               <p>{userName}</p>
             </td>
           </tr>

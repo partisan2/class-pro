@@ -2,23 +2,23 @@ import React from 'react'
 
 function ContactUsForms({name,email,subject,message}) {
   return (
-    <div>
+    <div className='CU-div'>
       <tbody>
-        <tr>
-            <td>Name</td>
-            <td>{name}</td>
+        <tr className='CU-tr'>
+            <td className='CU-td'>Name</td>
+            <td className='CU-td'>{name}</td>
         </tr>
-        <tr>
-            <td>Email</td>
-            <td>{email}</td>
+        <tr className='CU-tr'>
+            <td className='CU-td'>Email</td>
+            <td className='CU-td'>{email}</td>
         </tr>
-        <tr>
-            <td>Subject</td>
-            <td>{subject}</td>
+        <tr className='CU-tr'>
+            <td className='CU-td'>Subject</td>
+            <td className='CU-td'>{subject}</td>
         </tr>
-        <tr>
-            <td>Message</td>
-            <td>{message}</td>
+        <tr className='CU-tr'>
+            <td className='CU-td'>Message</td>
+            <td className='CU-td'>{message}</td>
         </tr>
       </tbody>
     </div>
