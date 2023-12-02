@@ -245,6 +245,21 @@ function Dashboard() {
         {userType === "teacher" && (
           <div className="student-list">
             <h3>student list</h3>
+            <table className="dash-st-list">
+        <tbody>
+          <tr className="dash-st-list-tr">
+            <td className="dash-st-list-td-head">
+              <p>Student ID</p>
+            </td>
+            <td className="dash-st-list-td-head">
+              <p>Email</p>
+            </td>
+            <td className="dash-st-list-td-head">
+              <p>Student Name</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
             {studentList}
           </div>
         )}
@@ -290,16 +305,16 @@ function UpcomingAssignment({ assignmentName, assignmentDue }) {
 function StudentListLayout({ userName, email, userId }) {
   return (
     <div>
-      <table>
+      <table className="dash-st-list">
         <tbody>
-          <tr>
-            <td>
+          <tr className="dash-st-list-tr">
+            <td className="dash-st-list-td">
               <p>{userId}</p>
             </td>
-            <td>
+            <td className="dash-st-list-td">
               <p>{email}</p>
             </td>
-            <td>
+            <td className="dash-st-list-td">
               <p>{userName}</p>
             </td>
           </tr>

@@ -101,3 +101,46 @@
     margin: 0 5px;
     border-radius: 10px;
 }
+
+.student-list{
+    margin: 20px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-list h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.dash-st-list{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dash-st-list-tr{
+    height: 20px;
+}
+
+.dash-st-list-td{
+    border: 1px solid black;
+    width: 200px;
+}
+
+.dash-st-list-td-head{
+    border: 1px solid black;
+    width: 200px;
+    background-color: #7B66FF;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Event css */
+
+.eve-wrapper{
+    background-color: #EEF5FF;
+}
