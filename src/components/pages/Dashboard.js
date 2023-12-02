@@ -15,6 +15,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import "../Style.css";
 import { Link } from "react-router-dom";
 import DesignerImage from "./img/Designer.jpeg";
+import AdminDashboard from "./AdminDashboard";
 
 function Dashboard() {
   const [events, setEvents] = useState([]);
@@ -169,6 +170,14 @@ function Dashboard() {
       );
     }
   );
+
+  if(userType ==="admin"){
+    return(
+      <div>
+        <AdminDashboard/>
+      </div>
+    )
+  }
 
   return (
     <div>
