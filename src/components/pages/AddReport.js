@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import HeaderDashboard from '../HeaderDashboard'
 import FooterDashboard from '../FooterDashboard'
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -21,12 +21,23 @@ function AddReport() {
     const subject05resultRef = useRef()
     const studentNameRef = useRef()
     const studentIdRef = useRef()
+    const [ totalResult,setTotalResult ] = useState()
+    const [ averageResult,setAverage ] = useState()
 
     async function handleSubmit(e){
         e.preventDefault()
+        function calculateAverage(){
+            const total = (
+                parseInt(subject01resultRef.current.value)+parseInt(subject02resultRef.current.value)+parseInt(subject03resultRef.current.value)+parseInt(subject04resultRef.current.value)+parseInt(subject05resultRef.current.value))
+            const average = total/5
+            setTotalResult(total)
+            setAverage(average)
+            console.log(totalResult)
+        }
         try{
             const id = currentUser.uid+(new Date().getTime().toString())
             // console.log(id)
+            calculateAverage()
             await setDoc(doc(db, "ReportSheets", id), {
                 resultId:id,
                 studentName:studentNameRef.current.value,
@@ -41,10 +52,13 @@ function AddReport() {
                 subject04result:subject04resultRef.current.value,
                 subject05:subject05Ref.current.value,
                 subject05result:subject05resultRef.current.value,
+                studentAverageResult:averageResult,
+                studentTotalResult:totalResult,
                 timeStamp: serverTimestamp()
             });
             alert("data added")
-            console.log("dump");
+            window.location.reload()
+            // console.log("dump");
 
         }catch(r){console.log(r)}
 
