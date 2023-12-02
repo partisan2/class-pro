@@ -47,10 +47,10 @@ function AllResults() {
       }catch(r){console.log(r)}
     }
     fetchData()
-  },[currentUser.uid])
+  },[currentUser.uid])  
 
   const report = documents?.map(({studentId,studentName,subject01,subject01result,subject02,subject02result,
-    subject03,subject03result,subject04,subject04result,subject05,subject05result},index)=>{
+    subject03,subject03result,subject04,subject04result,subject05,subject05result,studentTotalResult,studentAverageResult},index)=>{
         return <ResultSheetLayout 
         key={index}
         studentId={studentId}
@@ -65,6 +65,8 @@ function AllResults() {
         subject04result={subject04result}
         subject05={subject05}
         subject05result={subject05result}
+        studentAverageResult={studentAverageResult}
+        studentTotalResult={studentTotalResult}
         />
     })
   return (

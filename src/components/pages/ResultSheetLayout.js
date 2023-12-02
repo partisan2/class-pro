@@ -1,10 +1,13 @@
 
 
+
 function ResultSheetLayout({studentId,studentName,subject01,subject01result,subject02,subject02result,
-    subject03,subject03result,subject04,subject04result,subject05,subject05result}){
+    subject03,subject03result,subject04,subject04result,subject05,subject05result,studentTotalResult,studentAverageResult}){
+        
     return(
         <div className='report'>
             <table>
+                <tbody>
                     <h3>Result Sheet</h3>
                     <tr>
                         <td><p>Student Name</p></td>
@@ -33,7 +36,16 @@ function ResultSheetLayout({studentId,studentName,subject01,subject01result,subj
                     <tr>
                         <td><p>{subject05}</p></td>
                         <td><p>{subject05result}</p></td>
-                    </tr>
+                    </tr>  
+                    <tr>
+                        <td><p>Total Marks</p></td>
+                        <td><p>{studentTotalResult}</p></td>
+                    </tr>  
+                    <tr>
+                        <td><p>Average Marks</p></td>
+                        <td><p>{studentAverageResult}</p></td>
+                    </tr>           
+                </tbody>  
             </table>
       </div>
     )
