@@ -6,6 +6,8 @@ import { getDocs,collection,query,orderBy, where,doc,getDoc } from "firebase/fir
 import { useAuth } from '../../contexts/AuthContext'
 import "../Style.css"
 import { Link } from 'react-router-dom';
+import AdminDashboard from './AdminDashboard';
+// import Header from '../Header';
 
 
 function Dashboard() {
@@ -128,6 +130,11 @@ function Dashboard() {
     />
   })
 
+  if(userType === "admin"){
+    return(
+      <AdminDashboard />
+    )
+  }
   return (
     <div>
       <HeaderDashboard/>

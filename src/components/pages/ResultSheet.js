@@ -52,6 +52,7 @@ function ResultSheet() {
     fetchData()
   },[studentId])
 
+
   const report = documents?.map(({studentId,studentName,subject01,subject01result,subject02,subject02result,
     subject03,subject03result,subject04,subject04result,subject05,subject05result},index)=>{
         return <ResultSheetLayout 
