@@ -34,7 +34,7 @@ const Contact = () => {
           message:formData.message,
           timeStamp: serverTimestamp()
       });
-      alert("data added")
+      alert("Message send")
       // console.log("dump");
       window.location.reload()
   }catch(r){console.log(r)}
