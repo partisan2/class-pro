@@ -11,55 +11,56 @@ body {
   margin: 0;
   padding: 0;
 }
-.header-dashboard{
+
+.header-dashboard {
   width: 100vw;
   height: auto;
   overflow: hidden;
 }
 
-.navbar-dashboard{
+.navbar-dashboard {
   height: 80px;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(45deg, #d83f87,#44318d);
+  background-image: linear-gradient(45deg, #d83f87, #44318d);
   text-align: left;
   justify-content: space-between;
 }
 
 
-.logo{
+.logo {
   font-style: cursive;
   font-size: 36px;
   padding: 10px;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   justify-content: space-around;
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   gap: 15px;
 }
 
-.menu li a{
+.menu li a {
   color: #fff;
   font-size: 20px;
 }
 
-.menu li{
+.menu li {
   padding: 10px 20px;
 }
 
-.menu li:hover{
+.menu li:hover {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
 }
 
-#pic{
+#pic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -67,43 +68,43 @@ body {
   margin-right: 10px;
 }
 
-.dashboard-container{
+.dashboard-container {
   display: flex;
   justify-content: space-between;
   padding: 5px;
 }
 
-.upcming-act{
+.upcming-act {
   text-transform: capitalize;
   padding: 10px;
   border: 1px solid #44318d;
   border-radius: 5px;
 }
 
-.upcming-event{
+.upcming-event {
   text-transform: capitalize;
   padding: 10px;
-  border: 1px solid #44318d ;
+  border: 1px solid #44318d;
   border-radius: 5px;
 }
 
 
-.upcming-name{
+.upcming-name {
   font-size: 18px;
   font-weight: bold;
 }
 
-.assignment-component{
-  border: 1px solid #44318d ;
+.assignment-component {
+  border: 1px solid #44318d;
   padding: 10px;
   margin: 10px;
 }
 
-.assignment-component h3{
+.assignment-component h3 {
   text-transform: capitalize;
 }
 
-.description{
+.description {
   width: 80%;
   min-height: 50px;
   height: auto;
@@ -112,7 +113,7 @@ body {
   border-radius: 5px;
 }
 
-.about-me{
+.about-me {
   width: 400px;
   border: 1px solid #44318d;
   margin: 20px;
@@ -120,37 +121,37 @@ body {
   left: 500px;
 }
 
-.about-me h3{
+.about-me h3 {
   padding: 10px;
   justify-content: center;
   text-align: center;
 }
 
-.about-me td{
+.about-me td {
   text-align: center;
-  
+
 }
 
-.about-me .name{
+.about-me .name {
   text-align: left;
 }
 
-.about-me label{
+.about-me label {
   margin: 60px;
   font-size: 16px;
 }
 
-.about-me span{
+.about-me span {
   margin-top: 10px;
   margin-left: 140px;
 }
 
-.student-list{
+.student-list {
   border: 1px solid #44318d;
   margin: 30px;
 }
 
-.student-list h3{
+.student-list h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -262,5 +263,28 @@ a:hover {
 
   .banner img {
     width: 100%;
+  }
+
+  .teacher-function {
+    border: 1px solid #44318d;
+    margin: 30px;
+  }
+
+  .teacher-function span {
+    padding-right: 10px;
+  }
+
+  .banner-img {
+    width: 1300px;
+    height: 500px;
+    border-radius: 0;
+  }
+
+  .block {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
   }
 }
