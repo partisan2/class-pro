@@ -5,6 +5,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useAuth } from '../../contexts/AuthContext';
 import HeaderDashboard from '../HeaderDashboard';
 import FooterDashboard from '../FooterDashboard';
+import './updateprofile.css';
 
 
 function UpdateProfile() {

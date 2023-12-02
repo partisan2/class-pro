@@ -3,6 +3,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate, Link } from 'react-router-dom'
 import HeaderDashboard from '../HeaderDashboard'
 import FooterDashboard from '../FooterDashboard'
+import './updatepassword.css'
 
 
 function UpdatePsswrd() {
@@ -51,7 +52,7 @@ function UpdatePsswrd() {
             <br/>
             </form>
             <div>
-                <Link to="/">Cancel</Link>
+                <Link to="/" className="cancel-button">Cancel</Link>
             </div>
         </div>
         <FooterDashboard/>

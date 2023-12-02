@@ -32,8 +32,14 @@ body {
   font-style: cursive;
   font-size: 36px;
   padding: 10px;
+  text-decoration: none;
+  /* Remove underline by default */
 }
 
+.logo:hover {
+  text-decoration: none;
+  /* Remove underline on hover */
+}
 .nav-links {
   display: flex;
   justify-content: space-around;

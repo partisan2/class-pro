@@ -44,14 +44,14 @@ function ForgotPassword() {
                         <span>{message && <p>{message}</p>}</span>
                         <input type='email' placeholder='Email' ref={emailRef} required />
                         <br/>
-                        <div className='to_login'><Link to='/login'>Log In</Link></div>
+                        <div className='to_login'><Link to='/login' className='fp-log-sign1'>Log In</Link></div>
                         <button dissabled = {loading}>Reset Password</button>
                         <br/>
                     </form>
                     <div className='to_signup'>
                         Need An Account?
                         <br/>
-                        <Link to="/signup">Sign Up</Link>
+                        <Link to="/signup" className='fp-log-sign2'>Sign Up</Link>
                     </div>
             </div>
     </div>
