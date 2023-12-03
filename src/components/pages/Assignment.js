@@ -15,7 +15,7 @@ import {
 import HeaderDashboard from "../HeaderDashboard";
 import FooterDashboard from "../FooterDashboard";
 
-import "./Assignment.css"; 
+import "./Assignment.css";
 
 function Assignment() {
   const { currentUser } = useAuth();
@@ -84,22 +84,20 @@ function Assignment() {
     }
   );
 
-return (
-  <div className="assignment-page-container">
-    <HeaderDashboard />
-    <br/>
-    {userType === "teacher" && (
-      <span className="add-assignment-link">
-      <Link to="/add-assignment" >
-        Add Assignment
-      </Link>
-      </span>
-    )}
-    <div className="assignment-list">{assignment}</div>
-    <FooterDashboard />
-  </div>
-);
-    }
+  return (
+    <div className="assignment-page-container">
+      <HeaderDashboard />
+      <br />
+      {userType === "teacher" && (
+        <span className="add-assignment-link">
+          <Link to="/add-assignment">Add Assignment</Link>
+        </span>
+      )}
+      <div className="assignment-list">{assignment}</div>
+      <FooterDashboard />
+    </div>
+  );
+}
 
 function AssignmentLayout({
   assignmentName,
@@ -146,15 +144,17 @@ function AssignmentLayout({
         <tbody>
           <tr>
             <th>
-              <h3>{assignmentName}</h3>
+              <h3 className="as-head-3">{assignmentName}</h3>
             </th>
+          </tr>
+          <tr>
             <td>
               <p>{assignmentDue}</p>
             </td>
           </tr>
         </tbody>
       </table>
-      <p className="description">{assignmetDescription}</p>
+      <p className="as-description">{assignmetDescription}</p>
       <br />
       {assignmentFile !== "" && (
         <div className="file-link">
