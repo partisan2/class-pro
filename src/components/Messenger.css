@@ -73,6 +73,7 @@ img{
 
 .userchat:hover{
     background-color: antiquewhite;
+    cursor: pointer;
 }
 
 .userchat img{
