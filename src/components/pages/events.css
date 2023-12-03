@@ -1,0 +1,32 @@
+/* Rest of your global styles */
+.eve-main-content{
+  width: 95%;
+}
+.eve-event-component {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eve-event-name {
+  color: #000000;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.eve-event-info {
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.eve-delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
