@@ -33,8 +33,8 @@ return (
   <div className='navbar'>
     {/* {console.log(documentData)} */}
       <div className='user'>
-        <img src={pic} alt=''/>
-        <span>{documentData}</span>
+        <img className="m-img" src={pic} alt=''/>
+        <span className='m-span'><p>{documentData}</p></span>
       </div>
     </div>
   )

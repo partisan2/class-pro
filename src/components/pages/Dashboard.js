@@ -90,11 +90,11 @@ function Dashboard() {
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
-        const currentDate = `${year}-${month}-${day}`;
-        console.log(currentDate);
+        const currentDate = `${year}-${month}-${day}`
+        console.log(currentDate)
 
         const querySnapshot = await getDocs(
-          query(collection(db, "Assignments"), orderBy("assignmentDue"))
+        query(collection(db, "Assignments"),orderBy("assignmentDue"))
         );
         querySnapshot.forEach((doc) => {
           list.push({
@@ -209,6 +209,11 @@ function Dashboard() {
                     </td>
                   </tr>
                 </tbody>
+              </div>
+            }
+            {userType !== "teacher" &&
+              <div className="d-actions">
+                <span><Link to="/result-sheet">Results</Link></span>
               </div>
             }
           </div>

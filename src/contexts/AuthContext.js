@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { auth } from '../firebase'
+import { ChatContextProvider } from './ChatContext'
 
 const AuthContext = React.createContext()
 
@@ -51,7 +52,9 @@ export function AuthProvider({children}) {
 
   return (
     <AuthContext.Provider value={value}>
-        {!loading && children}
+        <ChatContextProvider>
+            {!loading && children}
+        </ChatContextProvider>
     </AuthContext.Provider>
   )
 }
