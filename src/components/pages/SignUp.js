@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import Header from "../Header";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
@@ -56,8 +55,7 @@ function SignUp() {
   }
 
   return (
-    <div className="container">
-      <Header />
+    <div className="s-container">
       <div className="error">{error && <span>{error}</span>}</div>
       <div className="form-signup">
         <form onSubmit={handleSubmit}>
