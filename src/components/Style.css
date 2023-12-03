@@ -143,4 +143,179 @@
 
 .eve-wrapper{
     background-color: #EEF5FF;
+    width: 100vw;
 }
+
+.eve-block{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 30px
+}
+
+.eve-link a{
+    padding: 14px 5px;
+    background-color: #fff;
+    color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 14px;
+}
+
+.eve-link a:hover{
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #fff;
+}
+
+.event-component{
+    margin: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #3498db;
+    padding: 30px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.event-component h3{
+    text-transform: capitalize;
+}
+
+.event-component p{
+    font-weight: bold;
+}
+
+/* add events and assignment */
+
+.ad-eve-wrap{
+    background-color: #EEF5FF;
+}
+
+.ad-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-form form{
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.ad-form input{
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.submit-btn{
+    color: #3498db;
+    background-color: #fff;
+    border: 2px solid #3498db;
+}
+
+.submit-btn:hover{
+    color: #fff;
+    background-color: #3498db;
+}
+
+/* assignment  */
+
+.assignment-page-container{
+    background-color: #EEF5FF;
+}
+
+.assignment-component{
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-component th{
+    height: auto;
+}
+
+.assignment-component h3{
+    text-transform: capitalize;
+}
+
+.assignment-component p{
+    font-size: 18px;
+}
+
+.file-link{
+    text-transform: capitalize;
+}
+
+.add-assignment-link{
+    padding: 14px 5px;
+    background-color: #fff;
+    color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 14px;
+}
+
+/* add result */
+
+.ad-res-wrapper{
+    background-color: #EEF5FF;
+}
+
+.result-component{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-component h3{
+    padding: 10px;
+}
+
+.result-component form{
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+
+.result-component input{
+    padding: 5px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* All results */
+
+.Ar-wrap{
+    background-color: #EEF5FF;
+}
+
+.Ar-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.report{
+    width: 400px;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.report h3{
+    text-align: center;
+    font-size: 24px;
+}
+
+.report p{
+    font-weight: bold;
+}
+
+

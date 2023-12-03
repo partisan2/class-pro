@@ -87,10 +87,13 @@ function Assignment() {
 return (
   <div className="assignment-page-container">
     <HeaderDashboard />
+    <br/>
     {userType === "teacher" && (
-      <Link to="/add-assignment" className="add-assignment-link">
+      <span className="add-assignment-link">
+      <Link to="/add-assignment" >
         Add Assignment
       </Link>
+      </span>
     )}
     <div className="assignment-list">{assignment}</div>
     <FooterDashboard />

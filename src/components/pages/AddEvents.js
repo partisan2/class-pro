@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import HeaderDashboard from '../HeaderDashboard'
+import FooterDashboard from '../FooterDashboard'
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import { useAuth } from '../../contexts/AuthContext';
@@ -35,18 +36,20 @@ function AddEvents() {
     }
 
   return (
-    <div>
+    <div className='ad-eve-wrap'>
         <HeaderDashboard/>
-      <div className='form'>
+      <div className='ad-form'>
         <form onSubmit={handleSubmit}>
+            <h3>Add Event</h3>
             <input type='text' placeholder='Name' ref={eventNameRef}/>
             <input type='date' placeholder='Date' ref={eventDateRef}/>
             <input type='time' placeholder='Time' ref={eventTimeRef}/>
             <input type='text' placeholder='Venue' ref={eventVenueRef}/>
             <input type='text' placeholder='Description' ref={eventDiscriptionRef}/>
-            <input type='submit'/>
+            <input type='submit' className='submit-btn'/>
         </form>
       </div>
+      <FooterDashboard/>
     </div>
   )
 }

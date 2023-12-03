@@ -70,9 +70,11 @@ function AllResults() {
         />
     })
   return (
-    <div>
+    <div className='Ar-wrap'>
       <HeaderDashboard/>
-      {userType === "teacher" && report}
+      <div className='Ar-block'>
+        {userType === "teacher" && <div className='Ar-report'>{report}</div>}
+      </div>
       <FooterDashboard/>
     </div>
   )

@@ -66,12 +66,12 @@ function AddReport() {
 
     
   return (
-    <div>
+    <div className='ad-res-wrapper'>
       <HeaderDashboard/>
         <div className='result-component'>
             <form onSubmit={handleSubmit}>
-                <table>
                     <h3>Result Sheet</h3>
+                <table>
                     <tr>
                         <td><lable>Student Name</lable></td>
                         <td><input type='text' placeholder='Student Name' ref={studentNameRef}/></td>
@@ -101,7 +101,7 @@ function AddReport() {
                         <td><input type='number' placeholder='Result' ref={subject05resultRef}/></td>
                     </tr>
                 </table>
-                <input type='submit' />
+                <input type='submit' className='submit-btn' />
             </form>
         </div>
       <FooterDashboard/>

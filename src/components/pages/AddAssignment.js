@@ -75,10 +75,11 @@ function AddAssignment() {
     }
 
   return (
-    <div>
+    <div className='ad-eve-wrap'>
       <HeaderDashboard/>
-        <div className='form'>
+        <div className='ad-form'>
             <form onSubmit={handleSubmit}>
+              <h3>Add Assignment</h3>
                 <input type='text' placeholder='Assignment Name' ref={assignmentNameRef}/>
                 <input type='date' placeholder='Due Date' ref={assignmentDueRef}/>
                 <input type='text' placeholder='Assignment Description' ref={assignmetDescriptionRef}/>

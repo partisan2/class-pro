@@ -2,7 +2,7 @@ import React,{ useRef, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link,useNavigate } from 'react-router-dom'
 import './LogIn.css'
-import Header from '../Header'
+
 
 function LogIn() {
     const emailRef = useRef()
@@ -32,7 +32,6 @@ function LogIn() {
 
   return (
     <div className='ll-container'>
-        <Header/>
         <div className='error'>
             {error && <span>{error}</span>}
         </div>
@@ -40,6 +39,7 @@ function LogIn() {
                     <form onSubmit={handleSubmit}>
                         <h1 className='signup_h'>LOG IN</h1>
                         <input className='input-box' name='email' type='email' placeholder='Email' ref={emailRef} required />
+                        <br/>
                         <input className='input-box' name='password' type='password' placeholder='Password'ref={passwordRef} required />
                         <div className='forgot_password'><Link to='/forgot-password'>Forgot Password?</Link></div>
                         <button dissabled = {loading}>Login</button>
