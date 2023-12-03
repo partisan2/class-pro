@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {db} from '../../firebase'
 import { collection, query, where, getDocs, setDoc, doc, updateDoc, serverTimestamp,getDoc } from "firebase/firestore";
 import {useAuth} from '../../contexts/AuthContext'
+import { ChatContext } from '../../contexts/ChatContext';
 
 
 function Search() {
@@ -9,6 +10,7 @@ function Search() {
   const [ user,setUser ] = useState(null)
   const [ err,setErr ] = useState(false)
   const { currentUser } = useAuth()
+  const { dispatch } = useContext(ChatContext)
 
   // console.log(currentUser.uid)
 
@@ -32,35 +34,41 @@ function Search() {
   }
 
   const handleSelect = async () =>{
-
+    
     const combinedID = 
-      currentUser.uid > user.userDbId
-      ? currentUser.uid + user.userDbId
-      :user.userDbId+currentUser.uid;
+    currentUser.uid > user.userDbId
+    ? currentUser.uid + user.userDbId
+    :user.userDbId+currentUser.uid;
+    
+    dispatch({type:"CHANGE_USER",payload:combinedID})
+      // console.log(combinedID)
 
     try{
       const res = await getDoc(doc(db,"chats",combinedID))
       console.log('dump')
-      if(!res.exists()){
+      if(res.exists()){
         await setDoc(doc(db,"chats",combinedID),{messages:[]})
-        console.log('dump1')
+        // console.log('dump1')
+        
         await updateDoc(doc(db,"UsersChats",currentUser.uid),{
-          [combinedID+"userInfo"]:{
+          [combinedID+".userInfo"]:{
             uid:user.userDbId,
             userName:user.userName,
-            profilePic:user.profilePic
+            profilePic:user.profilePic,
           },
-          [combinedID+".date"]: serverTimestamp()
-        })
-
+          [combinedID+".date"]: serverTimestamp(),
+        });
+        // console.log(user.userDbId)
         await updateDoc(doc(db,"UsersChats",user.userDbId),{
-          [combinedID+"userInfo"]:{
+          [combinedID+".userInfo"]:{
             uid:currentUser.uid,
             userName:currentUser.userName,
-            profilePic:currentUser.profilePic
+            profilePic:currentUser.profilePic,
           },
-          [combinedID+".date"]: serverTimestamp()
-        })
+          [combinedID+".date"]: serverTimestamp(),
+        });
+
+        console.log('d');
       }
     }catch(r){}
     setUser(null)
