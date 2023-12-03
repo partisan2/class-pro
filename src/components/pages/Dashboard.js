@@ -184,35 +184,79 @@ function Dashboard() {
       <div className="dashboard-wrapper">
         <HeaderDashboard />
         <div className="dashboard-container">
-          <div className="banner">
-            <img
-              src={DesignerImage}
-              alt="Designer"
-              height="500px"
-              width="500px"
-            />
-            {userType === "teacher" &&
-              <div className="d-actions">
-                <tbody>
-                  <tr>
-                    <td>
-                      <Link to='add-events'>Add Events</Link>
-                    </td>
-                    <td>
-                      <Link to='add-result'>Add Results</Link>
-                    </td>
-                    <td>
-                      <Link to='add-assignment'>Add Assignment</Link>
-                    </td>
-                    <td>
-                      <Link to='all-results'>See All Results</Link>
-                    </td>
-                  </tr>
-                </tbody>
-              </div>
-            }
+          {userType === "teacher" && (
+            <div className="d-actions">
+              <tbody>
+                <tr>
+                  <td>
+                    <Link to="add-events">Add Events</Link>
+                  </td>
+                  <td>
+                    <Link to="add-result">Add Results</Link>
+                  </td>
+                  <td>
+                    <Link to="add-assignment">Add Assignment</Link>
+                  </td>
+                  <td>
+                    <Link to="all-results">See All Results</Link>
+                  </td>
+                </tr>
+              </tbody>
+            </div>
+          )}
+          <div class="cpi-container">
+            <div class="cpi-card" id="instructors-card">
+              <h2 id="instructors-title">Guiding Your Educational Journey</h2>
+              <p id="instructors-desc">
+                We enhance students' education by fostering a focus on
+                self-discovery and personal growth.
+              </p>
+            </div>
+
+            <div class="cpi-card" id="learning-card">
+              <h2 id="learning-title">Engage in Interactive Learning</h2>
+              <p id="learning-desc">
+                Immerse yourself in compelling and interactive learning
+                experiences designed to make education not just informative, but
+                truly enjoyable.
+              </p>
+            </div>
+
+            <div class="cpi-card" id="curriculum-card">
+              <h2 id="curriculum-title">Stay Updated in Real-Time</h2>
+              <p id="curriculum-desc">
+                Connect with a dynamic community in real-time, ensuring you stay
+                updated and engaged through shared experiences and knowledge.
+              </p>
+            </div>
+
+            <div class="cpi-card" id="schedule-card">
+              <h2 id="schedule-title">Understand Yourself Better</h2>
+              <p id="schedule-desc">
+                Explore and understand yourself in comparison to others,
+                fostering self-awareness and personal development.
+              </p>
+            </div>
+
+            <div class="cpi-card" id="pt-connection-card">
+              <h2 id="pt-connection-title">Parent-Teacher Connection</h2>
+              <p id="pt-connection-desc">
+                Foster collaboration between parents and teachers for better
+                student success. Our platform facilitates seamless communication
+                and updates on student progress.
+              </p>
+            </div>
+            <div class="cpi-card" id="student-engagement-card">
+              <h2 id="student-engagement-title">Student Engagement</h2>
+              <p id="student-engagement-desc">
+                Empower students to take an active role in their education. Our
+                app provides tools and features to enhance student engagement,
+                including interactive assignments, quizzes, and collaborative
+                projects.
+              </p>
+            </div>
           </div>
-          <div>
+          <div className="db-event-all">
             <div className="upcming-act">
               <span className="upcming-name">Upcoming Assignments</span>
               {upcomingAssignments}
@@ -241,25 +285,25 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <hr/>
+        <hr />
         {userType === "teacher" && (
           <div className="student-list">
             <h3>student list</h3>
             <table className="dash-st-list">
-        <tbody>
-          <tr className="dash-st-list-tr">
-            <td className="dash-st-list-td-head">
-              <p>Student ID</p>
-            </td>
-            <td className="dash-st-list-td-head">
-              <p>Email</p>
-            </td>
-            <td className="dash-st-list-td-head">
-              <p>Student Name</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <tbody>
+                <tr className="dash-st-list-tr">
+                  <td className="dash-st-list-td-head">
+                    <p>Student ID</p>
+                  </td>
+                  <td className="dash-st-list-td-head">
+                    <p>Email</p>
+                  </td>
+                  <td className="dash-st-list-td-head">
+                    <p>Student Name</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             {studentList}
           </div>
         )}

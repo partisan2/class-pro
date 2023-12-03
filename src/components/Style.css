@@ -7,13 +7,10 @@
 }
 
 .banner, .upcming-act,.upcming-event{
-    margin: 30px 20px;
+    margin: 10px 20px;
 }
-
-.banner img{
-    width: 1200px;
-    height: 600px;
-    border-radius: 0;
+.db-event-all{
+    width:400px;
 }
 
 .upcming-act{
@@ -42,6 +39,7 @@
     border: 1px solid #000;
     padding: 5px 10px;
     text-transform: capitalize;
+    background-color: #9b9b9b;
 }
 .dash-up-act-tr td{
     border: 1px solid #000;
@@ -77,6 +75,7 @@
     border: 1px solid #000;
     padding: 5px 10px;
     text-transform: capitalize;
+    background-color: #9b9b9b;
 }
 
 .dash-up-eve-td{
@@ -318,4 +317,64 @@
     font-weight: bold;
 }
 
+.cpi-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+    width:90%;
+}
 
+.cpi-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.cpi-card h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.cpi-card p {
+    color: #333;
+    /* Adjusted text color for better visibility on dark backgrounds */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Style individual cards */
+
+#instructors-card {
+    background-color: #98c1d9;
+}
+
+#learning-card {
+    background-color: #fea82f;
+}
+
+#curriculum-card {
+    background-color: #A47CC4;
+    color: #fff;
+}
+
+#schedule-card {
+    background-color: #E96B80;
+    color: #fff;
+}
+#pt-connection-card {
+    background-color: #fc765e;
+    /* Customize the color */
+}
+
+#student-engagement-card {
+    background-color: #5bb978;
+    /* Customize the color */
+    color: #fff;
+    /* Text color for better visibility on dark backgrounds */
+}
