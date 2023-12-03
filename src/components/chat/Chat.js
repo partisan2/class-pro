@@ -10,7 +10,7 @@ function Chat() {
   return (
     <div className='chat'>
       <div className='chatInfo'>
-        <span>{data.user?.userName}</span>
+        <span className='c-span'><p>{data.user?.userName}</p></span>
       </div>
       <Messages/>
       <Input />

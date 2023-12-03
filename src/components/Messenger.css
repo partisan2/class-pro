@@ -7,7 +7,8 @@
 }
 
 .containerm{
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     display: flex;
     width:90% ;
@@ -24,12 +25,24 @@
 .navbar{
     display: flex;
     align-items: center;
-    background-color: beige;
+    background-color: #3498db;
     height: 50px;
     padding: 10px;
     justify-content: space-between;
     color: #000;
+    font-size: 24px;
+    color: #fff;
 }
+
+.m-span p{
+    text-transform: capitalize;
+}
+
+.s-span p{
+    text-transform: capitalize;
+}
+
+
 
 .user{
     display: flex;
@@ -39,10 +52,13 @@
 
 img{
     background-color: aqua;
-    height: 50px;
-    width: 100px;
+    
     border-radius: 50%;
     object-fit: cover;
+}
+.m-img{
+    height: 60px;
+    width: 60px;
 }
 
 .search{
@@ -100,12 +116,18 @@ img{
 
 .chat .chatInfo{
     height: 50px;
-    background-color: bisque;
+    background-color: #3498db;
     padding: 10px;
 }
 
+.c-span p{
+    color: #fff;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
 .messages{
-    background-color: aquamarine;
+    background-color: #fff;
     padding: 10px;
     height: 73%;
     overflow-y: scroll;

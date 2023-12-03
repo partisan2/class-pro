@@ -46,7 +46,7 @@ function Search() {
     try{
       const res = await getDoc(doc(db,"chats",combinedID))
       console.log('dump')
-      if(res.exists()){
+      if(!res.exists()){
         await setDoc(doc(db,"chats",combinedID),{messages:[]})
         // console.log('dump1')
         
@@ -86,7 +86,7 @@ function Search() {
         {/* {console.log(user.profilePic)} */}
         <img src={user.profilePic} alt=''/>
         <div className='uchatInfo'>
-          <span>{user.userName}</span>
+          <span className='s-span'><p>{user.userName}</p></span>
         </div>
       </div>
       }
