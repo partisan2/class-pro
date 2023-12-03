@@ -48,7 +48,9 @@ function HeaderDashboard() {
                   <li><Link to='/assignments'>Assignment</Link></li>
                   <li><Link to='/events'>Events</Link></li>
                   <li><Link to='/messenger'>Message</Link></li>
-                  <li><Link to='/aboutus'>About</Link></li>
+                  {(userType === "studet" || userType === "parent") && 
+                  <li><Link to='/result-sheet'>Result</Link></li>
+                  }
                   <li><Link to='/contact'>Contact</Link></li>
                   </div>
                   <Link to='/profile'><img id='pic' src={pic} alt=''/></Link>
