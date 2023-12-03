@@ -67,8 +67,9 @@ function Events() {
   return (
     <div className='eve-wrapper'>
       <HeaderDashboard/>
-        {userType === "teacher" && <Link to='/add-events'>Add Events</Link>}
-        <div className='block'>
+        <br/>
+        {userType === "teacher" && <span  className='eve-link'><Link to='/add-events'>Add Events</Link></span>}
+        <div className='eve-block'>
           {event}
         </div>
       <FooterDashboard/>
